@@ -1,0 +1,50 @@
+---
+title: Home page
+published: true
+---
+!!! 5
+%html{lang: 'en'}
+	%head
+		%meta{charset: 'utf-8'}
+		%title {{site.name}}
+		%meta{name: 'keywords', value: '{{ site.meta_keywords }}'}
+		%meta{name: 'description', value: '{{ site.meta_description }}'}
+		%meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}
+		{{'styles.css' | stylesheet_tag: 'all'}}
+		%script
+			(function() {
+			var config = {
+			kitId: 'euf2kxw',
+			scriptTimeout: 3000
+			};
+			var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+			})();
+	%body
+		%header.header-container
+			.header-content
+				.header-logo
+					%a{href: '/'}
+						%img{src: '{{"valet-io-logo-transparent.png" | theme_image_url}}', alt: 'Valet.io Logo'}
+				%nav.header-nav
+					%ul
+						%li
+							%a{href: '/#features'} Features
+						%li
+							%a{href: '/company'} Company
+						%li
+							%a{href: '/blog'} Blog
+						%li
+							%a{href: '/contact'} Contact			
+		{% block 'main' %}
+		%section.home-banner-container
+			.home-banner-content
+				.home-banner-heading
+					%h1 Make Every Event a Fundraiser
+					%h2.small With Technology That
+					%ul.home-banner-phrases.items-5
+						%li.item Your Guests Will Love
+						%li.item Boosts Your Bottom Line
+						%li.item Puts Realtime Fundraising Data in Your Pocket
+						%li.item Helps You Get to Know Your Guests
+						%li.item Won't Break Your Budget
+		{% endblock %}

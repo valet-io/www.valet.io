@@ -1,0 +1,29 @@
+@import "../compass-animation/animation"
+
+@mixin fader($item-count, $display-duration: 3, $transition-duration: 1)
+	
+	$total-duration: $item-count * ($display-duration + $transition-duration)
+
+	@include keyframes(fader-#{$item-count})
+		0%
+			opacity: 0
+		#{100% * $transition-duration / $total-duration},
+		#{100% * $display-duration / $total-duration}
+			opacity: 1
+		#{100% * ($display-duration + $transition-duration) / $total-duration},
+		100%
+			opacity: 0
+
+	.items-#{$item-count}
+		.item
+			opacity: 0
+			transition: opacity .5s
+
+			@include animation(fader-#{$item-count} #{$total-duration}s infinite)
+
+			@for $j from 1 through $item-count
+				&:nth-of-type(#{$j})
+					@include animation-delay(#{($j - 1) * ($display-duration) - $transition-duration}s)
+
+			&:first-of-type
+				opacity: 1

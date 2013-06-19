@@ -1,0 +1,34 @@
+$item-display-duration: 5 !default;
+$transition-duration: 2 !default;
+$display-duration: $transition-duration + $item-display-duration;
+
+@mixin gallery( $item-count ) {
+	$total-duration: $display-duration * $item-count;
+
+	@keyframes galleryAnimation-#{$item-count} {
+	  0% { opacity: 0; }
+	  #{100% * $transition-duration / $total-duration},
+	  #{100% * $display-duration / $total-duration} { opacity: 1; }
+	  #{100% * ($display-duration + $transition-duration) / $total-duration},
+	  100% { opacity: 0; }
+	}
+
+	.items-#{$item-count} {
+		&.autoplay .item { -webkit-animation: galleryAnimation-#{$item-count} #{$total-duration}s infinite; }
+
+		@for $j from 1 through $item-count {
+			.item:nth-of-type(#{$j}) {
+				$delay: #{($j - 1) * ($display-duration) - $transition-duration}s;
+
+				-webkit-animation-delay: #{$delay};
+			}
+		}
+	}
+}
+
+.gallery {
+	.item:first-of-type { position: static; opacity: 1; } // Set the first item to be visible
+	.item { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity .5s; }
+}
+
+@include gallery(5)

@@ -1,0 +1,159 @@
+// Compass
+
+@import "compass/css3/box"
+@import "compass/css3/transition"
+
+// Required Foundation elements
+
+@import "foundation/variables"
+@import "foundation/normalize"
+
+// Imported Foundation elements
+
+@import "foundation/components/global"
+@import "foundation/components/grid"
+@import "foundation/components/block-grid"
+
+// Custom modules
+
+@import "modules/variables"
+@import "modules/nav"
+@import "modules/type"
+@import "modules/animation"
+
+
+// Primary page header
+
+.header-container
+	padding: 1em 0
+
+	background: $valet-color
+	border-bottom: 4px solid darken($valet-color, 5%)
+
+.header-content
+	@include grid-row	
+
+.header-logo
+	padding: .25em 0
+	img
+		display: block
+		margin: 0 auto
+		max-height: 2.5em
+	@media #{$small}
+		@include grid-column(3)
+
+		padding: 1em 0
+
+		img
+			max-height: 5em
+
+.header-nav
+	text-transform: uppercase
+	margin-top: 1em
+	font-size: .75em
+
+	@media #{$tiny}
+		font-size: 1em
+
+	@media #{$small}
+		@include grid-column(6, true, $float: false)
+		font-size: 1.25em
+		margin-top: 2em
+
+	
+
+	ul
+		padding: 0 1em
+		color: white
+
+		text-align: justify
+
+		&:after
+			content: ''
+			display: inline-block
+			width: 100%
+
+		&:before
+			content: ''
+			display: block
+			margin-top: -1.75em	
+
+	li
+		display: inline-block
+		margin-right: -.25em
+		position: relative
+		top: 1.25em
+
+		padding-bottom: .25em
+		border-bottom: 4px solid transparent
+
+		transition: border .5s ease-in-out
+
+		&:hover
+			border-bottom-color: rgba(white, .5)
+
+		&:active
+			border-bottom-color: white		
+
+.home-banner-container
+	background: url(../images/skyline-banner.jpg) center top
+	padding: 2em 0
+	min-height: 480px
+
+.home-banner-content
+	@include grid-row
+
+
+.home-banner-heading
+	text-align: center
+
+	h1
+		display: inline-block
+		margin: 0 auto
+		padding: .5em 1em
+		line-height: 1.5em
+
+		background: rgba(black, .7)
+		color: white
+
+		text-transform: uppercase
+
+		@media #{$small}
+			font-size: 3em
+
+	h2.small
+		font-size: 1em
+		font-weight: 300
+
+		color: white
+
+		text-transform: uppercase
+
+@include fader(5)
+.home-banner-phrases
+	position: relative
+
+	list-style: none
+	padding: 0
+
+	font-size: 2em
+
+	color: white
+
+	li
+		position: absolute
+		left: 50%
+		width: 320px
+		margin-left: #{-1 * 320 / 2}px
+
+		@media #{$tiny}
+			width: $tiny-screen
+			margin-left: -$tiny-screen / 2
+
+		@media #{$small}
+			width: $small-screen
+			margin-left: -$small-screen / 2
+
+		@media #{$medium}
+			width: $medium-screen
+			margin-left: -$medium-screen / 2	

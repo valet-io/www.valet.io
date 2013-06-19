@@ -1,7 +1,6 @@
 // Compass
 
-@import "compass/css3/box"
-@import "compass/css3/transition"
+@import "compass/css3/"
 
 // Required Foundation elements
 
@@ -25,7 +24,7 @@
 // Primary page header
 
 .header-container
-	padding: 1em 0
+	padding: .25em 0
 
 	background: $valet-color
 	border-bottom: 4px solid darken($valet-color, 5%)
@@ -34,7 +33,7 @@
 	@include grid-row	
 
 .header-logo
-	padding: .25em 0
+
 	img
 		display: block
 		margin: 0 auto
@@ -42,25 +41,23 @@
 	@media #{$small}
 		@include grid-column(3)
 
-		padding: 1em 0
-
 		img
 			max-height: 5em
 
 .header-nav
 	text-transform: uppercase
-	margin-top: 1em
 	font-size: .75em
+	margin-top: .75em
 
 	@media #{$tiny}
 		font-size: 1em
 
 	@media #{$small}
-		@include grid-column(6, true, $float: false)
+		@include grid-column(8, true, $float: false)
 		font-size: 1.25em
-		margin-top: 2em
 
-	
+	@media #{$medium}
+		@include grid-column(6, true, $float: false)
 
 	ul
 		padding: 0 1em
@@ -110,16 +107,22 @@
 	h1
 		display: inline-block
 		margin: 0 auto
+		margin-bottom: .25em
 		padding: .5em 1em
 		line-height: 1.5em
 
-		background: rgba(black, .7)
-		color: white
-
-		text-transform: uppercase
+		@include border-radius(.1em)
 
 		@media #{$small}
-			font-size: 3em
+			font-size: 2.5em
+
+		background: rgba(black, .1)
+		color: white
+
+		@include box-shadow(inset rgba(black, .1) 0 0 3px 3px)
+		text-shadow: rgba(black, .2) 0 3px 2px
+
+		text-transform: uppercase
 
 	h2.small
 		font-size: 1em
@@ -129,12 +132,19 @@
 
 		text-transform: uppercase
 
+		&:before, &:after
+			content: '\2014\2014\2014' // 3 em dashes
+			letter-spacing: -4px // mash em together
+			padding: 0 .5em
+			
+
 @include fader(5)
 .home-banner-phrases
 	position: relative
 
 	list-style: none
 	padding: 0
+	margin: 0
 
 	font-size: 2em
 

@@ -1,5 +1,5 @@
 # TODO: explain it
-name: .
+name: Valet.io
 
 # TODO: explain it
 # subdomain: sample
@@ -11,6 +11,6 @@ name: .
 locales: [en]
 
 # TODO: explain it
-seo_title: .
+seo_title: Valet.io
 meta_keywords: "some meta keywords"
 meta_description: "some meta description"

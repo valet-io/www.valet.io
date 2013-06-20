@@ -47,4 +47,45 @@ published: true
 						%li.item Puts Realtime Fundraising Data in Your Pocket
 						%li.item Helps You Get to Know Your Guests
 						%li.item Won't Break Your Budget
+				.home-banner-lead-container
+					.home-banner-lead-form-container
+						.home-banner-lead-form
+							.name
+								.first-name
+									%input{type: 'text', required: 'required', placeholder: 'First Name'}
+								.last-name
+									%input{type: 'text', required: 'required', placeholder: 'Last Name'}
+							.organization	
+								%input{type: 'text', required: 'required', placeholder: 'Organization'}
+							.email	
+								%input{type: 'email', required: 'required', placeholder: 'Email'}
+							.submit
+								%button.request-demo-btn.btn.btn-success Request a Personal Demo
+						.home-banner-markets
+							%h2 We Love Working With
+							%ul.market-list
+								%li.market-item
+									%img.icon{src: '{{"ribbon-icon.png" | theme_image_url}}'}
+									.content
+										%h3 Nonprofits
+										%p Take your big events to the next level with mobile pledging and building that will delight supporters.
+								%li.market-item
+									%img.icon{src: '{{"vote-icon.png" | theme_image_url}}'}
+									.content
+										%h3 Political Campaigns
+										%p Seamless pledge drives make sure every supporter is included. You energize the crowd&mdash;we'll do the rest.
+								%li.market-item
+									%img.icon{src: '{{"school-icon.png" | theme_image_url}}'}
+									.content
+										%h3 Schools
+										%p Give your alumni, young and old, an easy and fun way to lend support without hours of extra preparation. 		
+					.home-banner-iphone-container
+						.home-banner-iphone-frame-container
+							.home-banner-iphone-frame
+								%img{src: '{{"iphone-frame.png" | theme_image_url}}', alt: 'iPhone running Valet.io mobile pledge drive apps'}
+							.home-banner-iphone-content-container
+								.home-banner-iphone-content
+									%img.iphone-screen{src: '{{"iphone-save-wetlands.png" | theme_image_url}}'}
+									%img.iphone-screen{src: '{{"iphone-herbert-love.png" | theme_image_url}}'}
+									%img.iphone-screen{src: '{{"iphone-save-wetlands-auction.png" | theme_image_url}}'}
 		{% endblock %}

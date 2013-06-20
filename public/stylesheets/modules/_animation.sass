@@ -1,6 +1,7 @@
 @import "../compass-animation/animation"
+@import "../compass-animation/animation/animate/fading/fading-entrances"
 
-@mixin fader($item-count, $display-duration: 3, $transition-duration: 1)
+@mixin fader($item-count, $display-duration: 5, $transition-duration: .5)
 	
 	$total-duration: $item-count * ($display-duration + $transition-duration)
 
@@ -27,3 +28,23 @@
 
 			&:first-of-type
 				opacity: 1
+
+@mixin slider-setup ($item-count, $display-duration: 3, $transition-duration: .5)
+	
+	$total-duration: ($display-duration + $transition-duration) * $item-count
+	$item-duration: $display-duration + $transition-duration
+	$animated-property: 'margin-left'
+
+	@include keyframes(slider-#{$item-count})
+		0%, #{percentage($display-duration / $total-duration)}, 100%
+			#{$animated-property}: 0
+		@for $i from 1 to $item-count
+			#{percentage($i * $item-duration / $total-duration)},
+			#{percentage(($i * $item-duration + $display-duration) / $total-duration)}
+				#{$animated-property}: percentage(-$i)
+
+@mixin slider($item-count, $display-duration: 3, $transition-duration: .5)
+
+	$total-duration: ($display-duration + $transition-duration) * $item-count
+
+	@include animation(slider-#{$item-count} #{$total-duration}s ease-in-out infinite)

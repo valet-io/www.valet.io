@@ -1,0 +1,22 @@
+@mixin button-color($color: #eee)
+	background: $color
+	border-bottom: darken($color, 20%) 4px solid
+
+	&:hover
+		background: lighten($color, 2%)
+
+	&:active
+		background: darken($color, 2%)
+
+.btn
+	font-size: 1.5em
+	padding: .5em 1em
+
+	@include border-radius(5px)
+	border: none
+
+	@include button-color
+
+.btn-success
+	@include button-color(#00BB9D)
+	color: white

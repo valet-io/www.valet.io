@@ -1,6 +1,6 @@
 // Compass
 
-@import "compass/css3/"
+@import "compass/css3"
 
 // Required Foundation elements
 
@@ -11,13 +11,15 @@
 
 @import "foundation/components/global"
 @import "foundation/components/grid"
-@import "foundation/components/block-grid"
 
 // Custom modules
 
 @import "modules/variables"
+@import "modules/mixins"
 @import "modules/nav"
 @import "modules/type"
+@import "modules/forms"
+@import "modules/buttons"
 @import "modules/animation"
 
 
@@ -36,24 +38,39 @@
 
 	img
 		display: block
+
 		margin: 0 auto
+		margin-bottom: 1em
+		padding-bottom: .5em
+
 		max-height: 2.5em
 	@media #{$small}
 		@include grid-column(3)
+		margin: 0
+		padding: 0
 
 		img
+			margin: 0
 			max-height: 5em
 
 .header-nav
 	text-transform: uppercase
 	font-size: .75em
-	margin-top: .75em
+
+	border-top: 2px solid rgba(white, .2)
+	padding-top: 1em
+	width: 90%
+	margin: 0 auto
+
+	margin-top: -1em
 
 	@media #{$tiny}
 		font-size: 1em
 
 	@media #{$small}
 		@include grid-column(8, true, $float: false)
+		margin-top: 0
+		border-top: none
 		font-size: 1.25em
 
 	@media #{$medium}
@@ -101,6 +118,14 @@
 	@include grid-row
 
 
+@mixin translucent-box($opacity: .1)
+	@include border-radius
+	@include box-shadow(inset rgba(black, $opacity) 0 0 3px 3px)
+	text-shadow: rgba(black, ($opacity * 2)) 0 3px 2px
+	color: white
+	background: rgba(black, $opacity)
+
+
 .home-banner-heading
 	text-align: center
 
@@ -109,20 +134,18 @@
 		margin: 0 auto
 		margin-bottom: .25em
 		padding: .5em 1em
+
+		font-size: 1em
 		line-height: 1.5em
 
-		@include border-radius(.1em)
+		@include translucent-box
 
-		@media #{$small}
-			font-size: 2.5em
-
-		background: rgba(black, .1)
-		color: white
-
-		@include box-shadow(inset rgba(black, .1) 0 0 3px 3px)
-		text-shadow: rgba(black, .2) 0 3px 2px
+		@media #{$tiny}
+			font-size: 2.5em		
 
 		text-transform: uppercase
+
+		@include animation(fadeInDown 1s)
 
 	h2.small
 		font-size: 1em
@@ -141,14 +164,19 @@
 @include fader(5)
 .home-banner-phrases
 	position: relative
+	height: 1em
 
 	list-style: none
 	padding: 0
 	margin: 0
 
-	font-size: 2em
+	font-size: 1em
 
 	color: white
+
+	@media #{$tiny}
+		font-size: 1.5em
+		margin-bottom: 2em
 
 	li
 		position: absolute
@@ -164,6 +192,131 @@
 			width: $small-screen
 			margin-left: -$small-screen / 2
 
+			font-size: 1.5em
+
 		@media #{$medium}
 			width: $medium-screen
-			margin-left: -$medium-screen / 2	
+			margin-left: -$medium-screen / 2
+
+			font-size: 2em
+
+
+.home-banner-iphone-container
+	display: none
+	@media #{$small}
+		display: block
+		@include grid-column(6, $pull: 6)		
+
+.home-banner-iphone-frame-container
+	position: relative
+	display: inline-block
+	max-width: 100%
+	overflow: hidden
+
+.home-banner-iphone-frame
+	position: relative
+	z-index: 2	
+
+.home-banner-iphone-content-container
+	position: absolute
+	z-index: 1
+	top: percentage(251.35/1460.13)
+	left: percentage(55/745.8)
+	height: percentage(962/1460.13)
+	width: percentage(642/745.8)
+
+	overflow: hidden
+
+@include slider-setup(3)
+
+.home-banner-iphone-content
+	height: 100%
+	width: 300.5%
+
+	margin-left: 0
+	@include clearfix()
+	@include slider(3)	
+
+.iphone-screen
+	display: block
+	float: left
+	width: percentage(1/3)
+
+.home-banner-lead-form-container
+	@media #{$small}
+		@include grid-column(6, true, $push: 6)
+
+.home-banner-lead-form
+	@include grid-row
+
+	.name
+		@include grid-row
+		.first-name, .last-name
+			@include grid-column(6)
+	.organization, .email
+		@include grid-column(12)
+	.submit
+		@include grid-column(12)
+	input
+		@include border-radius
+
+		outline: none
+		border: none
+
+		@include box-shadow(inset rgba(black, .25) 0 0 1px 2px)
+
+		font-size: 1.5em
+
+		@media #{$tiny}
+			font-size: 1.5em
+
+.request-demo-btn
+	margin-top: .5em
+	width: 100%	
+	font-size: 1.25em
+
+	@media #{$tiny}
+		font-size: 1.5em
+
+.home-banner-markets
+	@include grid-column(12)	
+	color: white
+
+	h2
+		font-size: 2.5em
+		text-shadow: rgba(black, .5) 0 3px 2px
+		margin: .75em 0
+		padding-top: .75em
+		border-top: rgba(white, .25) solid 3px
+
+.market-list
+	list-style: none
+	padding: 0
+
+.market-item
+	@include grid-row
+
+	padding: .5em
+	margin: .5em 0
+
+	@include translucent-box(.4)
+
+	.icon
+		@include grid-column(3)
+		border-right: rgba(white, .1) solid 1px
+
+	.content
+		@include grid-column(9)
+		line-height: 1.5em
+
+	h3
+		display: inline
+		font-size: 1.25em
+
+	p
+		display: inline
+		font-size: 1.1em
+
+		&:before
+			content: '\2014'
+			padding: 0 .1em

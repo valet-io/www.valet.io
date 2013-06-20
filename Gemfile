@@ -5,9 +5,6 @@ source 'https://rubygems.org'
 gem 'locomotivecms_wagon', '1.1.0'
 
 group :development do
-  # Live Reload
-
-  gem 'guard-livereload'
 
   # Mac OS X
   gem 'rb-fsevent', '~> 0.9.1', require: RUBY_PLATFORM.include?('darwin') && 'rb-fsevent'

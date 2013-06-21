@@ -29,7 +29,7 @@ published: true
 				%nav.header-nav
 					%ul
 						%li
-							%a{href: '/#features'} Features
+							%a{href: '#features'} Features
 						%li
 							%a{href: '/company'} Company
 						%li
@@ -115,6 +115,23 @@ published: true
 							%i.icon-windows
 						%span.hint--top{data: {hint: 'Blackberry'}}
 							%i.icon-bb
-		%section.home-pricing#pricing
+		%footer
+			.footer-content
+				%ul.social-profiles
+					%li
+						%a{href: 'https://twitter.com/valetdotio'}
+							%i.icon-twitter
+					%li
+						%a{href: 'https://facebook.com/valetdotio'}
+							%i.icon-facebook
+					%li
+						%a{href: 'https://www.linkedin.com/company/2298511'}
+							%i.icon-linkedin
+				.made-in-ny
+					Made with <i class=icon-heart></i> in NYC
 													
 		{% endblock %}
+
+		%script{src: "//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"}
+		%script{src: "//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.5/jquery.scrollTo.min.js"}
+		{{'script' | javascript_tag}}

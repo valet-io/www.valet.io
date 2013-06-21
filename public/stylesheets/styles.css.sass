@@ -340,6 +340,8 @@
 
 	border-top: lighten(#4C4C4C, 10%) 4px solid
 
+	padding-bottom: 2em
+
 .home-feature-highlight-container
 	@include grid-row	
 
@@ -367,6 +369,7 @@
 .compatibility-list
 	color: #ccc
 	font-size: 1.5em
+	margin-bottom: 1em
 
 	h5
 		display: inline
@@ -381,3 +384,37 @@
 	
 	i:hover
 		color: white
+
+footer
+	background: $valet-color
+
+.footer-content
+	@include grid-row
+	color: white
+	border-top: 4px solid darken($valet-color, 5%)
+
+	.social-profiles
+		@include grid-column(6)
+		list-style: none
+
+		font-size: 1.5em
+
+		li
+			display: inline
+			margin-right: .25em
+		a
+			color: inherit
+
+	.made-in-ny
+		font-size: 1.5em
+		margin: 1em 0
+
+		.icon-heart
+			color: red
+			text-shadow: white 0 1px 0
+			text-shadow: white 0 2px 0	
+
+
+	.made-in-ny
+		@include grid-column(6, true)
+		text-align: right	

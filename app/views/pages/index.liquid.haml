@@ -31,11 +31,11 @@ published: true
 						%li
 							%a{href: '#features'} Features
 						%li
-							%a{href: '/company'} Company
+							%a{href: '#company'} Company
 						%li
 							%a{href: 'http://blog.valet.io', target: '_blank'} Blog
 						%li
-							%a{href: '/contact'} Contact			
+							%a{href: '#contact'} Contact			
 		{% block 'main' %}
 		%section.home-banner-container
 			.home-banner-content
@@ -50,18 +50,18 @@ published: true
 						%li.item Won't Break Your Budget
 				.home-banner-lead-container
 					.home-banner-lead-form-container
-						.home-banner-lead-form
+						%form.home-banner-lead-form#lead-form
 							.name
 								.first-name
-									%input{type: 'text', required: 'required', placeholder: 'First Name'}
+									%input{type: 'text', id: 'first-name', name: 'first-name', required: true, placeholder: 'First Name'}
 								.last-name
-									%input{type: 'text', required: 'required', placeholder: 'Last Name'}
+									%input{type: 'text', id: 'last-name', name: 'last-name', required: true, placeholder: 'Last Name'}
 							.organization	
-								%input{type: 'text', required: 'required', placeholder: 'Organization'}
+								%input{type: 'text', id: 'organization', name: 'organization', required: true, placeholder: 'Organization'}
 							.email	
-								%input{type: 'email', required: 'required', placeholder: 'Email'}
+								%input{type: 'email', id: 'email', name: 'email', required: true, placeholder: 'Email'}
 							.submit
-								%button.request-demo-btn.btn.btn-success Request a Personal Demo
+								%button.request-demo-btn.btn.btn-success{type: 'submit'} Request a Personal Demo
 						.home-banner-markets
 							%h3 We Love Working With
 							%ul.market-list
@@ -115,6 +115,51 @@ published: true
 							%i.icon-windows
 						%span.hint--top{data: {hint: 'Blackberry'}}
 							%i.icon-bb
+		%section.home-about-us-container#company
+			.about-us-content
+				.person
+					.headshot
+						%img{src: '{{"bvd-headshot.jpg" | theme_image_url}}'}
+					%h3.name Ben Drucker
+					%h4.job-title CEO / Barista
+					.contact
+						%a{href: 'mailto: ben@valet.io'}
+							%i.icon-mail
+						%a{href: 'https://twitter.com/bendrucker'}
+							%i.icon-twitter
+						%a{href: 'https://linkedin.com/in/bendrucker'}
+							%i.icon-linkedin
+				.person
+					.headshot
+						%img{src: '{{"bld-headshot.jpg" | theme_image_url}}'}
+					%h3.name Ben Donald
+					%h4.job-title Biz Dev
+					.contact
+						%a{href: 'mailto: bendonald@valet.io'}
+							%i.icon-mail
+						%a{href: 'https://twitter.com/benldonald'}
+							%i.icon-twitter
+						%a{href: 'https://www.linkedin.com/in/benldonald'}
+							%i.icon-linkedin
+				.person
+					.headshot
+						%img{src: '{{"js-headshot.jpg" | theme_image_url}}'}
+					%h3.name Jake Silberg
+					%h4.job-title Customer Happiness
+					.contact
+						%a{href: 'mailto: jakesilberg@valet.io'}
+							%i.icon-mail
+						%a{href: 'https://twitter.com/jakesilberg'}
+							%i.icon-twitter
+						%a{href: 'http://www.linkedin.com/pub/jake-silberg/39/321/879'}
+							%i.icon-linkedin
+		%section.home-contact-container#contact
+			.home-contact-content
+				.heading
+					%h2 Let's Talk!
+					%p We love hearing from organization doing creative things with fundraising or just exploring how they could make their events more engaging. Drop us a line and let us know about your plans. Jake, our head of customer happiness, reads every one! If social media's your thing, you can find us on <a href="https://twitter.com/valetdotio">Twitter</a> and <a href="https://facebook.com/valetdotio">Facebook</a> too.
+				.contact-button
+					%a.btn.btn-success{href: 'mailto:jakesilberg@valet.io'} Email Jake						
 		%footer
 			.footer-content
 				%ul.social-profiles
@@ -134,4 +179,6 @@ published: true
 
 		%script{src: "//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"}
 		%script{src: "//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.5/jquery.scrollTo.min.js"}
+		%script{src: "//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"}
+		%script{src: "//cdnjs.cloudflare.com/ajax/libs/retina.js/1.0.1/retina.js"}
 		{{'script' | javascript_tag}}

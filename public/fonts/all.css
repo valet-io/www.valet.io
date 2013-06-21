@@ -9,7 +9,7 @@
 	font-style: normal;
 }
 
-.icon-apple, .icon-android, .icon-windows, .icon-bb, .icon-Ribbon, .icon-vote-button, .icon-graduation-cap, .icon-heart, .icon-twitter, .icon-facebook, .icon-linkedin {
+.icon-apple, .icon-android, .icon-windows, .icon-bb, .icon-ribbon, .icon-vote-button, .icon-graduation-cap, .icon-heart, .icon-twitter, .icon-facebook, .icon-linkedin, .icon-mail {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -31,7 +31,7 @@
 .icon-bb:before {
 	content: "\e003";
 }
-.icon-Ribbon:before {
+.icon-ribbon:before {
 	content: "\e004";
 }
 .icon-vote-button:before {
@@ -51,4 +51,7 @@
 }
 .icon-linkedin:before {
 	content: "\e00a";
+}
+.icon-mail:before {
+	content: "\e00b";
 }

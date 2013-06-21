@@ -111,6 +111,7 @@
 			border-bottom-color: white		
 
 .home-banner-container
+	background: #97B5CD
 	background: url(../images/skyline-banner.jpg) center top
 	padding: 2em 0
 	min-height: 480px
@@ -274,6 +275,36 @@
 		@media #{$tiny}
 			font-size: 1.5em
 
+	input.error
+		@include box-shadow(inset rgba(red, .5) 0 0 2px 3px)
+	label.error
+		background: rgba(white, .75)
+		padding: .25em .5em
+		@include border-radius(5px)
+
+		font-size: .75em
+
+		@media #{$small}
+			font-size: 1em
+
+	.submit-status
+		@include grid-column(12)
+		margin: .5em 0
+
+	.submit-success, .submit-error
+		@include border-radius(5px)
+		padding: .5em
+		font-size: 1.5em		
+	.submit-success			
+		background: rgba(white, .75)
+
+	.submit-error
+		background: rgba(red, .5)
+		color: white
+
+		a
+			color: #999	
+
 .request-demo-btn
 	margin-top: .5em
 	width: 100%	
@@ -333,12 +364,16 @@
 			padding: 0 .1em
 
 .home-feature-highlights
+	background: #4C4C4C
 	@include background-image-retina("../images/tweed", png, 200px, 200px)
 
 	color: white
 	text-shadow: rgba(black, .5) 0 2px 3px
 
-	border-top: lighten(#4C4C4C, 10%) 4px solid
+	$border: lighten(#4C4C4C, 10%) 4px solid
+
+	border-top: $border
+	border-bottom: $border
 
 	padding-bottom: 2em
 
@@ -385,19 +420,95 @@
 	i:hover
 		color: white
 
+.home-about-us-container, .home-contact-container
+	@include background-image-retina("../images/grid_noise", png, 98px, 98px)
+	padding: 1em 0
+
+.about-us-content
+	@include grid-row
+
+	.person
+		margin: 1em 0
+		text-align: center
+		@media #{$tiny}
+			@include grid-column(4)
+
+	.headshot img
+		display: block
+		margin: 0 auto
+		@include border-radius(50%)
+		@include box-shadow($valet-color 0 0 0 4px)
+
+		transition: all .2s linear
+
+		&:hover
+			@include box-shadow($valet-color 0 0 1px 4px)
+
+	.name
+		margin-bottom: .25em
+		font-weight: 400
+
+	.job-title
+		text-transform: lowercase
+		font-weight: 300
+		margin: .5em 0
+
+	.contact
+		font-size: 2em
+		color: #444
+
+		i:hover
+			color: #666
+
+.home-contact-content
+	@include grid-row
+
+	border-top: rgba(#4C4C4C, .25) 4px solid
+
+	h2
+		font-weight: 400
+		font-size: 2.5em
+
+	p
+		font-size: 1.25em
+		line-height: 1.25em
+		font-weight: 300
+
+		a
+			color: $valet-color
+			font-weight: 400
+
+	.heading
+		@include grid-column(12)		
+
+	.contact-button
+		@include grid-column(12)
+
+		a
+			display: block
+			width: 100%
+			padding: 1em .5em
+
+	@media #{$small}
+		.heading
+			@include grid-column(8)
+		.contact-button
+			@include grid-column(4)
+			margin-top: 4em
+
 footer
 	background: $valet-color
+	border-top: 4px solid darken($valet-color, 5%)
 
 .footer-content
 	@include grid-row
 	color: white
-	border-top: 4px solid darken($valet-color, 5%)
+
 
 	.social-profiles
 		@include grid-column(6)
 		list-style: none
 
-		font-size: 1.5em
 
 		li
 			display: inline
@@ -406,13 +517,15 @@ footer
 			color: inherit
 
 	.made-in-ny
-		font-size: 1.5em
 		margin: 1em 0
 
 		.icon-heart
-			color: red
-			text-shadow: white 0 1px 0
-			text-shadow: white 0 2px 0	
+			color: darken(red, 10%)
+			text-shadow: white 0 0 5px
+
+	@media #{$small}
+		.social-profiles, .made-in-ny
+			font-size: 1.5em		
 
 
 	.made-in-ny

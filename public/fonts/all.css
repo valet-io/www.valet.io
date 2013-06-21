@@ -1,0 +1,45 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('icomoon.eot');
+	src:url('icomoon.eot?#iefix') format('embedded-opentype'),
+		url('icomoon.woff') format('woff'),
+		url('icomoon.ttf') format('truetype'),
+		url('icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon-apple, .icon-android, .icon-windows, .icon-bb, .icon-ribbon, .icon-vote-button, .icon-graduation-cap, .icon-heart {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-apple:before {
+	content: "\e000";
+}
+.icon-android:before {
+	content: "\e001";
+}
+.icon-windows:before {
+	content: "\e002";
+}
+.icon-bb:before {
+	content: "\e003";
+}
+.icon-ribbon:before {
+	content: "\e004";
+}
+.icon-vote-button:before {
+	content: "\e005";
+}
+.icon-graduation-cap:before {
+	content: "\e006";
+}
+.icon-heart:before {
+	content: "\e007";
+}

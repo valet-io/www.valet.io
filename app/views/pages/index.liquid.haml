@@ -10,7 +10,8 @@ published: true
 		%meta{name: 'keywords', value: '{{ site.meta_keywords }}'}
 		%meta{name: 'description', value: '{{ site.meta_description }}'}
 		%meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}
-		{{'styles.css' | stylesheet_tag: 'all'}}
+		{{'styles' | stylesheet_tag}}
+		{{'/fonts/all' | stylesheet_tag}}
 		%script
 			(function() {
 			var config = {
@@ -32,7 +33,7 @@ published: true
 						%li
 							%a{href: '/company'} Company
 						%li
-							%a{href: '/blog'} Blog
+							%a{href: 'http://blog.valet.io', target: '_blank'} Blog
 						%li
 							%a{href: '/contact'} Contact			
 		{% block 'main' %}
@@ -62,22 +63,22 @@ published: true
 							.submit
 								%button.request-demo-btn.btn.btn-success Request a Personal Demo
 						.home-banner-markets
-							%h2 We Love Working With
+							%h3 We Love Working With
 							%ul.market-list
 								%li.market-item
-									%img.icon{src: '{{"ribbon-icon.png" | theme_image_url}}'}
+									%i.icon-ribbon
 									.content
-										%h3 Nonprofits
-										%p Take your big events to the next level with mobile pledging and building that will delight supporters.
+										%h4 Nonprofits
+										%p Take your big events to the next level with mobile pledging and bidding that will delight supporters.
 								%li.market-item
-									%img.icon{src: '{{"vote-icon.png" | theme_image_url}}'}
+									%i.icon-vote-button
 									.content
-										%h3 Political Campaigns
-										%p Seamless pledge drives make sure every supporter is included. You energize the crowd&mdash;we'll do the rest.
+										%h4 Political Campaigns
+										%p Let every supporter participate. You energize the crowd&mdash;we'll do the rest.
 								%li.market-item
-									%img.icon{src: '{{"school-icon.png" | theme_image_url}}'}
+									%i.icon-graduation-cap
 									.content
-										%h3 Schools
+										%h4 Schools
 										%p Give your alumni, young and old, an easy and fun way to lend support without hours of extra preparation. 		
 					.home-banner-iphone-container
 						.home-banner-iphone-frame-container
@@ -88,4 +89,32 @@ published: true
 									%img.iphone-screen{src: '{{"iphone-save-wetlands.png" | theme_image_url}}'}
 									%img.iphone-screen{src: '{{"iphone-herbert-love.png" | theme_image_url}}'}
 									%img.iphone-screen{src: '{{"iphone-save-wetlands-auction.png" | theme_image_url}}'}
+		%section.home-feature-highlights#features
+			.home-feature-highlight-container
+				.home-feature-highlight-content
+					.feature-heading
+						%h2 Empower Your Guests
+					%p Fundraising doesn't have to get in the way of your mission. Let your guests give at any time, from anywhere in the room, right from their own phones. No messy sign ups, downloads or distractions. Your guests can give the moment they feel inspired.
+			.home-feature-highlight-container
+				.home-feature-highlight-content
+					.feature-heading
+						%h2 Follow Up When it Counts
+					%p Give each guest the attention they deserve. We track pledges and bids in real time so you can collect payments at the event via credit card and check. Have the money waiting for you in your bank account the very next morning and spend the day thanking your guests, not chasing after them.
+			.home-feature-highlight-container
+				.home-feature-highlight-content
+					.feature-heading
+						%h2 No Assembly Required
+					%p Say goodbye to proprietary hardware and apps. Valet.io works on any device with a web browser&mdash;no downloads required. If you need to rent iPads or iPod Touches for a silent auction, we've got you covered through our rental partner, <a href="http://flyingconnected.com">Flying Connected</a>. 
+					.compatibility-list
+						%h5 Compatible With:	
+						%span.hint--top{data: {hint: 'iPhone + iPad'}}
+							%i.icon-apple
+						%span.hint--top{data: {hint: 'Android'}}
+							%i.icon-android
+						%span.hint--top{data: {hint: 'Windows Phone'}}
+							%i.icon-windows
+						%span.hint--top{data: {hint: 'Blackberry'}}
+							%i.icon-bb
+		%section.home-pricing#pricing
+													
 		{% endblock %}

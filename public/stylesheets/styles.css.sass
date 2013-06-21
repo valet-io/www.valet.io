@@ -20,6 +20,7 @@
 @import "modules/type"
 @import "modules/forms"
 @import "modules/buttons"
+@import "modules/tooltips"
 @import "modules/animation"
 
 
@@ -246,7 +247,7 @@
 	@media #{$small}
 		@include grid-column(6, true, $push: 6)
 
-.home-banner-lead-form
+.home-banner-lead-form, .home-banner-lead-container
 	@include grid-row
 
 	.name
@@ -265,6 +266,9 @@
 
 		@include box-shadow(inset rgba(black, .25) 0 0 1px 2px)
 
+		&:focus
+			@include box-shadow(inset rgba(black, .5) 0 0 2px 3px)	
+
 		font-size: 1.5em
 
 		@media #{$tiny}
@@ -282,11 +286,14 @@
 	@include grid-column(12)	
 	color: white
 
-	h2
+	h3
 		font-size: 2.5em
-		text-shadow: rgba(black, .5) 0 3px 2px
+		font-weight: 300
+
 		margin: .75em 0
 		padding-top: .75em
+
+		text-shadow: rgba(black, .5) 0 3px 2px
 		border-top: rgba(white, .25) solid 3px
 
 .market-list
@@ -301,17 +308,21 @@
 
 	@include translucent-box(.4)
 
-	.icon
+	i
 		@include grid-column(3)
-		border-right: rgba(white, .1) solid 1px
+		border-right: rgba(white, .1) solid 2px
+		font-size: 4em
+		text-align: center
+		padding: 0
 
 	.content
 		@include grid-column(9)
 		line-height: 1.5em
 
-	h3
+	h4
 		display: inline
 		font-size: 1.25em
+		font-weight: 500
 
 	p
 		display: inline
@@ -320,3 +331,53 @@
 		&:before
 			content: '\2014'
 			padding: 0 .1em
+
+.home-feature-highlights
+	@include background-image-retina("../images/tweed", png, 200px, 200px)
+
+	color: white
+	text-shadow: rgba(black, .5) 0 2px 3px
+
+	border-top: lighten(#4C4C4C, 10%) 4px solid
+
+.home-feature-highlight-container
+	@include grid-row	
+
+.home-feature-highlight-content
+	@include grid-column(12)
+	border-bottom: rgba(white, .1) solid 3px
+
+	p
+		font-size: 1.5em
+		line-height: 1.5em
+
+	a
+		color: darken(white, 30%)	
+
+.feature-heading
+	margin: 0 auto
+	
+	h2
+		margin: 0
+		margin-top: .75em
+
+		font-size: 2.5em
+		font-weight: 300
+
+.compatibility-list
+	color: #ccc
+	font-size: 1.5em
+
+	h5
+		display: inline
+
+		margin-right: .5em
+
+		text-transform: uppercase
+		font-weight: 400
+	
+	span
+		margin-right: .25em	
+	
+	i:hover
+		color: white

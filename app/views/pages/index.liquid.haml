@@ -12,6 +12,11 @@ published: true
 		%meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}
 		{{'styles' | stylesheet_tag}}
 		{{ '../fonts/all.css' | stylesheet_tag }}
+		%link{rel: 'shortcut icon', href: '{{ "favicon.ico" | theme_image_url }}'}
+		%link{rel: 'apple-touch-icon-precomposed', href: '{{ "apple-touch-icons/iphone.png" | theme_image_url }}'}
+		%link{rel: 'apple-touch-icon-precomposed', sizes: '72x72', href: '{{ "apple-touch-icons/ipad.png" | theme_image_url }}'}
+		%link{rel: 'apple-touch-icon-precomposed', sizes: '114x114', href: '{{ "apple-touch-icons/iphone-retina.png" | theme_image_url }}'}
+		%link{rel: 'apple-touch-icon-precomposed', sizes: '144x144', href: '{{ "apple-touch-icons/ipad-retina.png" | theme_image_url }}'}
 		%script
 			(function() {
 			var config = {

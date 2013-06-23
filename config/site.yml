@@ -5,12 +5,12 @@ name: Valet.io
 # subdomain: sample
 
 # TODO: explain it
-# domains: [www.example.com, example.com]
+domains: [www.valet.io]
 
 # TODO: explain it
 locales: [en]
 
 # TODO: explain it
-seo_title: Valet.io
-meta_keywords: "some meta keywords"
-meta_description: "some meta description"
+seo_title: Valet.io | Make Every Event a Fundraiser | Mobile Pledge and Silent Auction
+meta_keywords: "mobile fundraising, mobile pledge, silent auction, charity gala, political campaigns"
+meta_description: "Turn any event into a fundraiser with Valet.io's seamless mobile pledge drive and bidding tools. Guests use their own smartphones and no downloads are ever required."

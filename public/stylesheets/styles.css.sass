@@ -112,9 +112,34 @@
 
 .home-banner-container
 	background: #97B5CD
-	background: url(../images/skyline-banner.jpg) center top
+	background: url(../images/skyline-banner.jpg) 80% 25%
+	@media #{$tiny}
+		background-position: 80% 0
+	@media #{$large}
+		background-position: 80% 10%	
 	padding: 2em 0
 	min-height: 480px
+
+	position: relative
+
+.home-banner-photo-credit
+	display: none
+
+	@media #{$small}
+		display: block
+
+		position: absolute
+		bottom: 0
+		right: 0
+
+		font-size: .5em
+		font-weight: 300
+
+		padding-right: .5em
+		padding-bottom: .5em
+
+		color: white
+		opacity: .5
 
 .home-banner-content
 	@include grid-row

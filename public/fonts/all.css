@@ -9,7 +9,7 @@
 	font-style: normal;
 }
 
-.icon-apple, .icon-android, .icon-windows, .icon-bb, .icon-ribbon, .icon-vote-button, .icon-graduation-cap, .icon-heart, .icon-twitter, .icon-facebook, .icon-linkedin, .icon-mail {
+.icon-apple, .icon-android, .icon-windows, .icon-bb, .icon-ribbon, .icon-vote-button, .icon-graduation-cap, .icon-heart, .icon-twitter, .icon-facebook, .icon-linkedin, .icon-mail, .icon-arrow-left, .icon-arrow-right {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -54,4 +54,10 @@
 }
 .icon-mail:before {
 	content: "\e00b";
+}
+.icon-arrow-right:before {
+	content: "\e00c";
+}
+.icon-arrow-left:before {
+	content: "\e00d";
 }

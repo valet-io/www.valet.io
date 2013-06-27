@@ -1,12 +1,13 @@
 ---
-title: Home page
+title: Home
+seo_title: Fundraising Apps for Nonprofit, Political, School Events
 published: true
 ---
 !!! 5
 %html{lang: 'en'}
 	%head
 		%meta{charset: 'utf-8'}
-		%title {{site.name}}
+		%title Valet.io{% if page.seo_title %} | {{page.seo_title}}{% endif %}
 		%meta{name: 'keywords', value: '{{ site.meta_keywords }}'}
 		%meta{name: 'description', value: '{{ site.meta_description }}'}
 		%meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}
@@ -34,13 +35,13 @@ published: true
 				%nav.header-nav
 					%ul
 						%li
-							%a{href: '#features'} Features
+							%a{href: '/#features'} Features
 						%li
-							%a{href: '#company'} Company
+							%a{href: '/#company'} Company
 						%li
 							%a{href: 'http://blog.valet.io', target: '_blank'} Blog
 						%li
-							%a{href: '#contact'} Contact			
+							%a{href: '/#contact'} Contact			
 		{% block 'main' %}
 		%section.home-banner-container
 			.home-banner-content

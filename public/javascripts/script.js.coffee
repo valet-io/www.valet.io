@@ -1,6 +1,10 @@
 $(document).ready ->
-	$('a[href^="#"]').click ->
-		$.scrollTo $(@).attr('href'), 1000
+	$('a[href^="/#"]').click (e) ->
+		e.preventDefault()
+		
+		href = $(@).attr('href')
+		id = href.substring(1, href.length)
+		$.scrollTo id, 1000
 
 	$('#lead-form').validate
 		submitHandler: (form) ->

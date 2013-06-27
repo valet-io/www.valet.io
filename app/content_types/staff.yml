@@ -1,0 +1,77 @@
+# Public name of this content type
+name: Staff
+
+# TODO: explain
+slug: staff
+
+# Explanation for the backoffice
+description: Enter all the Valet.io staff here. Blog posts can be attributed to a specific person in this list. 
+
+# Default field (e.g title)
+label_field_name: name
+
+# Order of entries
+order_by: manually # default: manually, also available: created_at or any field slug
+
+# Order direction
+# order_direction: asc # default: asc, also available: desc
+
+# Display entries grouped by <field> in the backoffice
+# group_by: <your field>
+
+# Activate public 'create' API (e.g for a contact form)
+# public_submission_enabled: false
+
+# Emails to be notified on new entries using the public API
+# public_submission_accounts: ['john@acme.net']
+
+# Describe each field. The name shoud always be an underscored string
+fields: 
+- name: # Name of the field
+    label: Name
+    type: string
+    required: true
+    hint: Full name
+    localized: false
+
+- title: # Name of the field
+    label: Title
+    type: string
+    required: false
+    hint: "The job title, with a little human element/humor where appropriate."
+    localized: false
+
+- email: # Name of the field
+    label: Email
+    type: string
+    required: false
+    hint: The staff member's company email
+    localized: false
+
+- twitter: # Name of the field
+    label: Twitter
+    type: string
+    required: false
+    hint: "Just the Twitter handle, no @, http, or anything else"
+    localized: false
+
+- linkedin: # Name of the field
+    label: LinkedIn URL
+    type: string
+    required: false
+    hint: "The full LinkedIn URL, http and all"
+    localized: false
+
+- avatar: # Name of the field
+    label: Avatar
+    type: file
+    required: false
+    hint: "The photo that will appear with this person. 150px square, JPEG"
+    localized: false
+
+- avatar_retina: # Name of the field
+    label: Avatar (Retina)
+    type: file
+    required: false
+    hint: "The 2x version for retina displays. 300px square."
+    localized: false

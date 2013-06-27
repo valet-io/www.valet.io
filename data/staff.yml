@@ -1,0 +1,9 @@
+- "Ben Drucker":
+    _permalink: "ben-drucker"
+    title: "CEO / Lead Dev / Barista"
+    email: "ben@valet.io"
+    twitter: "bendrucker"
+    linkedin: "https://linkedin.com/in/bendrucker"
+    avatar: /images/bvd-headshot.jpg # Path to a file in the public/samples folder or to a remote and external file.
+    avatar_retina: /images/bvd-headshot@2x.jpg # Path to a file in the public/samples folder or to a remote and external file.
+

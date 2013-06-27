@@ -55,4 +55,9 @@ fields:
     hint: A description of the field for the editors
     localized: false
     # Enable or not the RTE [html|text]
-    # text_formatting: html
+    text_formatting: html
+- author:
+    label: Author
+    required: true
+    type: belongs_to
+    class_name: staff

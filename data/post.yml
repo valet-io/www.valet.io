@@ -1,20 +1,53 @@
 - "Sample 1":
     published: true # Or false
     date: 2013/21/23 # YYYY/MM/DD
-    body: "Quo occaecati rerum architecto perferendis animi et rerum. Veritatis et autem sunt esse voluptatem tempore voluptatem consequatur. At maiores corporis tempore. Tempora et quia fugiat voluptatibus."
-
+    author: ben-drucker
+    body: |
+        <p>This might be the best view anyone has ever had from the silent auction table.&nbsp;</p>
+        <p><img alt="image" src="http://media.tumblr.com/66a8273627bdfd977989901bac03d959/tumblr_inline_mord0nvNvo1qz4rgp.jpg" /></p>
+        <p></p>
+        <p>We used our high-tech bidding platform at the FabNYC Speakeasy Soiree this week, helping them raise money for public arts projects on the Lower East Side. The auction had some pretty cool items, like Colbert Report tickets and a whole year of different beers from Jimmy's No. 43 bar nearby. The bidding wars got pretty intense toward the end. Some guests camped out at an iPad kiosk for the best chance to win. Others made the most of the mobile bidding, checking their items on their smartphones from across the crowded penthouse.</p>
+        <p>I couldn't help but take lots of pictures of the beautiful venue--the top-floor of The Standard East Village. Here's some of my favorites:</p>
+        <p><img alt="image" src="http://media.tumblr.com/14914eb9ac1814f87365d0a33aac7be2/tumblr_inline_mord5dZWLi1qz4rgp.jpg" /></p>
+        <p></p>
+        <p><img alt="image" src="http://media.tumblr.com/7832daa6024d1b0769d6dca9fa56236e/tumblr_inline_mord5sJ4Vd1qz4rgp.jpg" /></p>
+        <p></p>
+        <p><img alt="image" src="http://media.tumblr.com/8b424e92e28e816522188dcce51b9ac1/tumblr_inline_mord7aIwhx1qz4rgp.jpg" /></p>
+        <p></p>
+        <p>I ended up serving as the product tester for most of the evening because I really wanted to win the Jon Stewart tickets that were available. I was the high-bidder for a while, but once the auction was extended to allow for even more bids, I didn't stand a chance of winning on my student budget. It was my job to help auction winners check-out at the end of the night, using Square to take credit card payments. As I met the winner of the tickets, I was glad our service helped raise money for a good cause, even if it personally meant I wouldn't win that auction.&nbsp;</p>
 - "Sample 2":
     published: true # Or false
-    date: 2013/21/23 # YYYY/MM/DD
-    body: "Aut non qui iure eaque rerum itaque voluptatibus vel. Totam sit veniam quidem modi ut et. Id id facilis reiciendis vel numquam molestiae. Amet debitis quos non."
-
-- "Sample 3":
+    date: 2013/11/23 # YYYY/MM/DD
+    author: ben-drucker
+    body: |
+        This is my second post!
+- "Sample 2":
     published: true # Or false
-    date: 2013/21/23 # YYYY/MM/DD
-    body: "Voluptatibus aut et consequatur et. Asperiores quas dicta nihil. Aut in deserunt dolor repellat quibusdam quod sit. Temporibus harum consequatur autem. Culpa mollitia quae sit impedit aut in."
-
-- "Sample 4":
+    date: 2013/11/23 # YYYY/MM/DD
+    author: ben-drucker
+    body: |
+        This is my second post!
+- "Sample 2":
     published: true # Or false
-    date: 2013/21/23 # YYYY/MM/DD
-    body: "Voluptas velit occaecati vel et. Vitae reprehenderit et esse consequatur. Facere nisi asperiores qui deleniti molestiae consequuntur id atque. Illum eligendi tempore aliquam molestias aut assumenda eaque sapiente. Unde minus est sed consequatur omnis."
-
+    date: 2013/11/23 # YYYY/MM/DD
+    author: ben-drucker
+    body: |
+        This is my second post!
+- "Sample 2":
+    published: true # Or false
+    date: 2013/11/23 # YYYY/MM/DD
+    author: ben-drucker
+    body: |
+        This is my second post!
+- "Sample 2":
+    published: true # Or false
+    date: 2013/11/23 # YYYY/MM/DD
+    author: ben-drucker
+    body: |
+        This is my second post!
+- "Sample 2":
+    published: true # Or false
+    date: 2013/11/23 # YYYY/MM/DD
+    author: ben-drucker
+    body: |
+        This is my second post!

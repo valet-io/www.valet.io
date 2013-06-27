@@ -1,6 +1,5 @@
 ---
-title: Blog
-seo_title: Event and Fundraising Technology Blog
+title: Post
 
 # true if the page is included in the menu
 listed: true
@@ -15,7 +14,9 @@ published: true
 # redirect_url: "<url to a page or to a remote url>"
 
 # content type that this page is templatizing
-# content_type: posts
+content_type: "post"
+
+parent: "blog"
 
 # editable_elements:
 #   'some_block/some_slug': "<text>"
@@ -24,12 +25,18 @@ published: true
 {% extends parent %}
 
 {% block main %}
-.posts
+.post-container
 	%header.blog-header
-		%h1 Valet.io Event and Fundraising Technology Blog
-	{% unless contents.post.size == 0 %}
-	{% paginate contents.post by 5 %}
-	{% for post in paginate.collection %}
+		%h1
+			%a{href: '/blog'} Valet.io Event and Fundraising Technology Blog
+		.post-navigation
+			{% if post.previous %}
+			%a.previous-post{href: '/blog/post/{{post.previous._permalink}}', title: '/blog/post/{{post.previous.title}}'} {{post.previous.title}}
+			{% endif %}
+			{% if post.next %}
+			%a.next-post{href: '/blog/post/{{post.next._permalink}}', title: '/blog/post/{{post.next.title}}'} {{post.next.title}}
+			{% endif %}
+
 	%article.post
 		%header.post-header
 			.post-header-content
@@ -43,22 +50,12 @@ published: true
 					%img{src: '{{post.author.avatar.url}}'}
 
 		.post-content
-			{{post.body | strip_html | truncatewords: 150}}
-			%a.read-more{href: '/blog/post/{{post._permalink}}'} Read the Full Post
-	{% endfor %}
+			{{post.body}}
+		.post-comments
+			%h2.heading Join the Conversation
+			#disqus_thread
 
-	.page-navigation
-		{% if paginate.next %}
-		.older-posts
-			%a{href: '{{paginate.next.url}}', title: 'Older Posts'} &larr; Older
-		{% endif %}
-		{% if paginate.previous %}
-		.newer-posts
-			%a{href: '{{paginate.previous.url}}', title: 'Newer Posts'} Newer &rarr;
-		{% endif %}
+%script
+	var disqus_shortname="valet-io";(function(){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="//"+disqus_shortname+".disqus.com/embed.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)})()
 
-	{% endpaginate %}
-	{% else %}
-	%h1 Uh oh. No blog posts found!
-	{% endunless %}
 {% endblock %}

@@ -711,25 +711,159 @@ footer
 				content: ''
 
 		.social-profiles
-			@include grid-column(6)	
+			@include grid-column(6)
 
-.posts
+.blog-header
+	h1
+		@include grid-column(12)
+		padding: 0
+
+		margin: .5em 0
+
+		font-size: 2.5em
+		font-weight: 400
+
+	.post-navigation
+		@include grid-column(12)
+		padding: 0
+		padding-top: .75em
+
+		border-top: rgba(#888, .25) 2px solid
+
+		font-weight: 300
+
+		color: #888
+
+		.previous-post
+			@include grid-column(6)
+
+			&:before
+				padding-right: .5em
+				content: '\2190'
+		.next-post
+			@include grid-column(6, true)
+			text-align: right
+
+			&:after
+				padding-left: .5em
+				content: '\2192'
+
+		.previous-post, .next-post
+			padding-left: 0
+			padding-right: 0
+
+			transition: color .2s linear
+
+			&:hover
+				color: #444
+
+.posts, .post-container
 	@include background-image-retina("../images/grid_noise", png, 98px, 98px)
 	padding: 1em 0
 
-.post
+.post, .blog-header
 	@include grid-row
 	$margin: 1em
 	margin-top: $margin
 	margin-bottom: $margin
 	padding: 1em 1.5em
 
-	background: rgba(white, .5)
+	background: white
+
+	@include box-shadow(inset 0 0 3px 1px rgba(#222, .4))
+
+	@include border-radius(5px)
+	
 
 
 .post-header, .post-content
 	@include grid-row
 
 .post-header
+	padding-bottom: 1em
+	margin-bottom: 1em
+	border-bottom: rgba(#888, .25) 2px solid
+
+	@include grid-row
+
+.page-navigation
+	@include grid-row
+
+	.older-posts
+		@include grid-column(6)
+
+	.newer-posts
+		@include grid-column(6, true, $float: false)
+
+		a
+			float: right
+
+	.older-posts, .newer-posts
+		padding: 0
+
+		a
+			display: inline-block
+			@extend .btn
+
+			@include button-color($valet-color)
+			color: white		
+
+.post-header-content
+	@include grid-column(10)
+	padding-left: 0
+
 	.title
-		margin: .5em 0	
+		margin: .25em 0
+		font-size: 2.5em
+
+	.author
+		margin: 0
+		font-weight: 400
+		font-size: 1em
+
+		.job-title
+			font-style: italic
+			font-size: .75em
+
+			&:before
+				content: '\2014\0020' // em dash, space
+
+.post-header .author-avatar
+	@include grid-column(2)
+
+	.image
+		float: right
+
+		$size: 75px
+
+		height: $size
+		width: $size
+
+		@include border-radius($size)
+		overflow: hidden
+
+		border: #888 4px solid
+
+.post-content
+	line-height: 1.5em
+	font-weight: 300
+	font-size: 1.25em
+
+	padding: 1em 0
+
+.read-more
+	color: $valet-color
+
+	&:hover
+		color: darken($valet-color, 5%)
+
+	&:after
+		content: '\2192'
+		padding-left: .25em	
+
+.post-comments
+	border-top: rgba(#888, .25) 2px solid
+
+	.heading
+		font-weight: 300
+		font-size: 2em			

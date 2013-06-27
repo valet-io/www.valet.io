@@ -1,0 +1,40 @@
+---
+title: Blog
+
+# true if the page is included in the menu
+listed: true
+
+# true if the page is published
+published: true
+
+# position among sibling pages
+# position: 1
+
+# sets a redirection to the given url (301)
+# redirect_url: "<url to a page or to a remote url>"
+
+# content type that this page is templatizing
+# content_type: posts
+
+# editable_elements:
+#   'some_block/some_slug': "<text>"
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+{% extends parent %}
+
+{% block main %}
+.posts
+	{% unless contents.post.size == 0 %}
+	{% paginate contents.post by 5 %}
+	{% for post in paginate.collection %}
+	%article.post
+		.post-header
+			%h1.title {{post.title}}
+		.post-content
+			{{post.body}}
+	{% endfor %}
+	{% endpaginate %}
+	{% else %}
+	%h1 Uh oh. No blog posts found!
+	{% endunless %}
+{% endblock %}

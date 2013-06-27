@@ -1,0 +1,20 @@
+- "Sample 1":
+    published: true # Or false
+    date: 2013/21/23 # YYYY/MM/DD
+    body: "Quo occaecati rerum architecto perferendis animi et rerum. Veritatis et autem sunt esse voluptatem tempore voluptatem consequatur. At maiores corporis tempore. Tempora et quia fugiat voluptatibus."
+
+- "Sample 2":
+    published: true # Or false
+    date: 2013/21/23 # YYYY/MM/DD
+    body: "Aut non qui iure eaque rerum itaque voluptatibus vel. Totam sit veniam quidem modi ut et. Id id facilis reiciendis vel numquam molestiae. Amet debitis quos non."
+
+- "Sample 3":
+    published: true # Or false
+    date: 2013/21/23 # YYYY/MM/DD
+    body: "Voluptatibus aut et consequatur et. Asperiores quas dicta nihil. Aut in deserunt dolor repellat quibusdam quod sit. Temporibus harum consequatur autem. Culpa mollitia quae sit impedit aut in."
+
+- "Sample 4":
+    published: true # Or false
+    date: 2013/21/23 # YYYY/MM/DD
+    body: "Voluptas velit occaecati vel et. Vitae reprehenderit et esse consequatur. Facere nisi asperiores qui deleniti molestiae consequuntur id atque. Illum eligendi tempore aliquam molestias aut assumenda eaque sapiente. Unde minus est sed consequatur omnis."
+

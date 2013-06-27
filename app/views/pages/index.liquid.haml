@@ -95,7 +95,51 @@ published: true
 									%img.iphone-screen{src: '{{"iphone-herbert-love.png" | theme_image_url}}'}
 									%img.iphone-screen{src: '{{"iphone-save-wetlands-auction.png" | theme_image_url}}'}
 				.home-banner-photo-credit
-					%a{href: 'http://whitneybrowne.com/'} &copy; Whitney Browne					
+					%a{href: 'http://whitneybrowne.com/'} &copy; Whitney Browne
+		%section.home-our-clients#clients
+			.home-our-clients-content
+				%h2.section-title Our Amazing Customers
+				.navigation-arrows
+					%button.icon-arrow-left{'data' => {'slide-direction' => 'left'}}
+					%button.icon-arrow-right{'data' => {'slide-direction' => 'right'}}
+				.client-list-container
+					.client-list
+						.client-set
+							.client
+								.logo
+									%img{src: '{{"clients/cory-booker-senate.png" | theme_image_url}}'}
+								%h3.name Cory Booker for Senate
+								.testimonial
+									%p.quote That was awesome. This is awesome.
+									%p.quote-source Cory Booker
+							.client
+								.logo
+									%img{src: '{{"clients/bronxworks.png" | theme_image_url}}'}
+								%h3.name BronxWorks
+								.testimonial
+									%p.quote It was very fun, interactive, and cool. Everyone was very pleased and impressed!
+									%p.quote-source Cathy Sharp
+									%p.job-title Director, Individual &amp; Corporate Relations</span>
+						.client-set			
+							.client
+								.logo
+									%img{src: '{{"clients/vns-ny.png" | theme_image_url}}'}
+								%h3.name Visiting Nurse Service of New York
+								.testimonial
+									%p.quote Thanks for getting this working for us so quickly. It was great! This is so cool!
+									%p.quote-source Allyson Barbieri
+									%p.job-title HR/Information Consultant
+							.client
+								.logo
+									%img{src: '{{"clients/cfaf.png" | theme_image_url}}'}
+								%h3.name Center for Architecture Foundation
+								.testimonial
+									%p.quote Working with Valet.io was great! They were instrumental in  making it more attractive and fun for our guests.
+									%p.quote-source Alice Stryker
+									%p.job-title Development Manager
+				%ul.position-indicators
+					%li.indicator.on
+					%li.indicator		
 		%section.home-feature-highlights#features
 			.home-feature-highlight-container
 				.home-feature-highlight-content
@@ -128,7 +172,7 @@ published: true
 					.headshot
 						%img{src: '{{"bvd-headshot.jpg" | theme_image_url}}'}
 					%h3.name Ben Drucker
-					%h4.job-title CEO / Barista
+					%h4.job-title CEO / Lead Dev / Barista
 					.contact
 						%a{href: 'mailto: ben@valet.io'}
 							%i.icon-mail
@@ -167,27 +211,29 @@ published: true
 					%p We love hearing from organizations doing creative things with fundraising or just exploring how they could make their events more engaging. Drop us a line and let us know about your plans. Jake, our head of customer happiness, will get back to your right away! If social media's your thing, you can find us on <a href="https://twitter.com/valetdotio">Twitter</a> and <a href="https://facebook.com/valetdotio">Facebook</a> too.
 				.contact-button
 					%a.btn.btn-success{href: 'mailto:jakesilberg@valet.io'} Email Jake						
+		{% endblock %}
 		%footer
 			.footer-content
-				%ul.social-profiles
-					%li
-						%a{href: 'https://twitter.com/valetdotio'}
-							%i.icon-twitter
-					%li
-						%a{href: 'https://facebook.com/valetdotio'}
-							%i.icon-facebook
-					%li
-						%a{href: 'https://www.linkedin.com/company/2298511'}
-							%i.icon-linkedin
-				.made-in-ny
-					Made with <i class=icon-heart></i> in NYC
-													
-		{% endblock %}
+				.short-footer
+					%ul.social-profiles
+						%li
+							%a{href: 'https://twitter.com/valetdotio'}
+								%i.icon-twitter
+						%li
+							%a{href: 'https://facebook.com/valetdotio'}
+								%i.icon-facebook
+						%li
+							%a{href: 'https://www.linkedin.com/company/2298511'}
+								%i.icon-linkedin
+					.made-in-ny
+						Made with <i class=icon-heart></i> in NYC
 
 		%script{src: "//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"}
 		%script{src: "//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.5/jquery.scrollTo.min.js"}
 		%script{src: "//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"}
 		%script{src: "//cdnjs.cloudflare.com/ajax/libs/retina.js/1.0.1/retina.js"}
+		%script{src: "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"}
+		{{'swipe' | javascript_tag}}
 		{{'script' | javascript_tag}}
 		%script
 			var analytics=analytics||[];(function(){var e=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group"],t=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var n=0;n<e.length;n++)analytics[e[n]]=t(e[n])})(),analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)};

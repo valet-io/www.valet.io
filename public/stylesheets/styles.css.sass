@@ -23,6 +23,9 @@
 @import "modules/tooltips"
 @import "modules/animation"
 
+html, body
+	min-height: 100%	
+
 
 // Primary page header
 
@@ -155,6 +158,7 @@
 
 .home-banner-heading
 	text-align: center
+	overflow: hidden
 
 	h1
 		display: inline-block
@@ -188,44 +192,26 @@
 			padding: 0 .5em
 			
 
-@include fader(5)
+@include slider-setup(5)
 .home-banner-phrases
-	position: relative
-	height: 1em
+
+	width: 500%
+
+	@include clearfix()
 
 	list-style: none
 	padding: 0
-	margin: 0
+	margin: 1em 0
 
-	font-size: 1em
+	font-size: 2.5em
 
 	color: white
 
-	@media #{$tiny}
-		font-size: 1.5em
-		margin-bottom: 2em
+	@include slider(5)
 
 	li
-		position: absolute
-		left: 50%
-		width: 320px
-		margin-left: #{-1 * 320 / 2}px
-
-		@media #{$tiny}
-			width: $tiny-screen
-			margin-left: -$tiny-screen / 2
-
-		@media #{$small}
-			width: $small-screen
-			margin-left: -$small-screen / 2
-
-			font-size: 1.5em
-
-		@media #{$medium}
-			width: $medium-screen
-			margin-left: -$medium-screen / 2
-
-			font-size: 2em
+		width: 20%
+		float: left
 
 
 .home-banner-iphone-container
@@ -388,6 +374,167 @@
 			content: '\2014'
 			padding: 0 .1em
 
+.home-our-clients
+	@include background-image-retina("../images/grid_noise", png, 98px, 98px)
+	$border: lighten(#4C4C4C, 10%) 4px solid
+	border-top: $border
+
+html.touch .navigation-arrows
+	display: none		
+
+.home-our-clients-content
+	@include grid-row
+	position: relative
+
+	.section-title
+		text-align: center
+		margin-bottom: .5em
+		font-size: 2em
+
+		text-transform: uppercase
+		font-weight: 400
+
+		color: $valet-color
+		text-shadow: rgba(black, .5) 0 1px 1px
+
+	.navigation-arrows
+		position: absolute
+		width: 100%
+		top: 50%
+
+		z-index: 2
+
+		font-size: 2em
+
+		.icon-arrow-left, .icon-arrow-right
+			opacity: .75
+			border: none
+			outline: none
+			background: none
+
+			color: #444
+
+			&:hover
+				opacity: 1
+				cursor: pointer
+
+			transition: opacity .1s linear
+
+		.icon-arrow-left
+			float: left
+			margin-left: 10px
+			visibility: hidden
+		.icon-arrow-right
+			float: right
+			margin-right: 10px
+
+	.position-indicators
+		text-align: center
+
+		list-style: none
+		padding: 0
+
+		margin: .5em 0
+
+		.indicator
+			display: inline-block
+
+			height: 10px
+			width: 10px
+
+			@include border-radius(10px)
+
+			background: #bbb
+
+			&:hover
+				cursor: pointer
+
+			transition: background .2s linear
+
+			&.on
+				background: #444
+
+.client-list-container
+	padding: 0
+	padding-top: 1em
+	overflow: hidden
+	// visibility: hidden
+	position: relative
+
+.client-list
+	@include clearfix
+	padding: 0
+	overflow: hidden
+	position: relative
+
+	.client-set
+		float: left
+		width: 100%
+		position: relative
+
+		@media #{$small}
+			padding: 0 4em
+
+
+	.client
+		@include grid-column(6)
+		text-align: center
+
+		color: #444
+
+	.testimonial
+		display: none
+
+		@media #{$small}
+			border-top: rgba(gray, .25) 1px solid
+			display: block
+
+	.logo
+		margin: 0 auto
+		height: 50px
+
+		img
+			max-height: 100%
+	.name
+		text-transform: uppercase
+		font-weight: 500
+		font-size: .75em
+
+		color: $valet-color
+		text-shadow: rgba(black, .25) 0 1px 0
+
+		@media #{$small}
+			font-size: 1.25em
+
+
+	.quote, .quote-source
+		margin: .5em 0
+
+	.quote
+		font-weight: 400
+		font-style: italic
+
+		line-height: 1.25em
+
+		&:before
+			content: '\201C'
+		&:after	
+			content: '\201D'
+
+	.quote-source
+		font-weight: 500
+
+		&:before
+			content: '\2014'
+
+	.job-title
+		margin: 0
+		font-size: .75em
+		font-style: italic				
+
+
+
+
 .home-feature-highlights
 	background: #4C4C4C
 	@include background-image-retina("../images/tweed", png, 200px, 200px)
@@ -529,9 +676,10 @@ footer
 	@include grid-row
 	color: white
 
+	.social-profiles, .made-in-ny
+		display: inline-block
 
 	.social-profiles
-		@include grid-column(6)
 		list-style: none
 
 
@@ -548,11 +696,40 @@ footer
 			color: darken(red, 10%)
 			text-shadow: white 0 0 5px
 
+		&:before
+			content: '\2014'
+
 	@media #{$small}
 		.social-profiles, .made-in-ny
-			font-size: 1.5em		
+			font-size: 1.5em
+
+	@media screen and (max-width: #{$small-screen})
+		.made-in-ny
+			@include grid-column(6, true)
+			text-align: right
+			&:before
+				content: ''
+
+		.social-profiles
+			@include grid-column(6)	
+
+.posts
+	@include background-image-retina("../images/grid_noise", png, 98px, 98px)
+	padding: 1em 0
+
+.post
+	@include grid-row
+	$margin: 1em
+	margin-top: $margin
+	margin-bottom: $margin
+	padding: 1em 1.5em
+
+	background: rgba(white, .5)
 
 
-	.made-in-ny
-		@include grid-column(6, true)
-		text-align: right	
+.post-header, .post-content
+	@include grid-row
+
+.post-header
+	.title
+		margin: .5em 0	

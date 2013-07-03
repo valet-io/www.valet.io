@@ -29,13 +29,13 @@ parent: "blog"
 	%header.blog-header
 		%h1
 			%a{href: '/blog'} Valet.io Event and Fundraising Technology Blog
-		.post-navigation
-			{% if post.previous %}
-			%a.previous-post{href: '/blog/post/{{post.previous._permalink}}', title: '/blog/post/{{post.previous.title}}'} {{post.previous.title}}
-			{% endif %}
-			{% if post.next %}
-			%a.next-post{href: '/blog/post/{{post.next._permalink}}', title: '/blog/post/{{post.next.title}}'} {{post.next.title}}
-			{% endif %}
+		/ .post-navigation
+		/ 	{% if post.previous %}
+		/ 	%a.previous-post{href: '/blog/post/{{post.previous._permalink}}', title: '/blog/post/{{post.previous.title}}'} {{post.previous.title}}
+		/ 	{% endif %}
+		/ 	{% if post.next %}
+		/ 	%a.next-post{href: '/blog/post/{{post.next._permalink}}', title: '/blog/post/{{post.next.title}}'} {{post.next.title}}
+		/ 	{% endif %}
 
 	%article.post
 		%header.post-header

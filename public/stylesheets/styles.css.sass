@@ -114,8 +114,7 @@ html, body
 			border-bottom-color: white		
 
 .home-banner-container
-	background: #97B5CD
-	background: url(../images/skyline-banner.jpg) 80% 25%
+	background: #5E769A url(../images/skyline-banner.jpg) 80% 25%
 	@media #{$tiny}
 		background-position: 80% 0
 	@media #{$large}
@@ -741,7 +740,7 @@ footer
 				padding-right: .5em
 				content: '\2190'
 		.next-post
-			@include grid-column(6, true)
+			@include grid-column(6, true, $float: false)
 			text-align: right
 
 			&:after
@@ -850,6 +849,9 @@ footer
 	font-size: 1.25em
 
 	padding: 1em 0
+
+	a
+		color: $valet-color
 
 .read-more
 	color: $valet-color

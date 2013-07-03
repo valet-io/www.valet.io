@@ -9,7 +9,7 @@ $(document).ready ->
 	$('#lead-form').validate
 		submitHandler: (form) ->
 			formSubmit = $.post '/lead', $(form).serialize(), () ->
-				$(form).append "<div class='submit-status'><div class='submit-success'>Thanks #{$('form #first-name').val()}! We'll be in touch soon.</div></div>"
+				$(form).append "<div class='submit-status'><div class='submit-success'>Thanks #{$('form #firstname').val()}! We'll be in touch soon.</div></div>"
 				$(form).find('input:text, input:password, input:file, input:email, input:tel, select, textarea').val('')	
 				_gaq.push(['_trackEvent', 'Forms', 'Submit', 'Request a Demo'])
 

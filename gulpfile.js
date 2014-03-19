@@ -17,6 +17,11 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('./build/css'));
 });
 
+gulp.task('images', function () {
+  gulp.src(['images/**/*'])
+    .pipe(gulp.dest('build/images'));
+});
+
 gulp.task('server', function(done) {
   var server = new nodeStatic.Server('./build');
   http.createServer(function (request, response) {
@@ -32,6 +37,7 @@ gulp.task('server', function(done) {
 gulp.task('watch', ['server'], function () {
   var livereload = plugins.livereload();
   gulp.watch('styles/*.styl', ['styles']);
+  gulp.watch('images/**/*', ['images']);
   gulp.watch(['layouts/*', 'pages/**/*', 'partials/*'], ['grunt-assemble']);
 
   gulp.watch('build/**/*').on('change', function (file) {

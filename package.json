@@ -1,0 +1,20 @@
+{
+  "name": "www.valet.io",
+  "version": "2.0.0",
+  "description": "Valet.io's public website",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:valet-io/www.valet.io.git"
+  },
+  "keywords": [
+    "website",
+    "assemble",
+    "static"
+  ],
+  "author": "Ben Drucker <bvdrucker@gmail.com> (http://www.bendrucker.me/)",
+  "license": "All Rights Reserved",
+  "bugs": {
+    "url": "https://github.com/valet-io/www.valet.io/issues"
+  },
+  "homepage": "https://github.com/valet-io/www.valet.io"
+}

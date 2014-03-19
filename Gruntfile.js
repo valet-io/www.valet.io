@@ -9,11 +9,13 @@ module.exports = function (grunt) {
         assets: 'build/assets',
         layoutdir: 'layouts',
         layoutext: '.hbs',
-        layout: 'default'
+        layout: 'default',
+        helpers: ['handlebars-helper-partial']
       },
       pages: {
         options: {
-          data: 'pages/data.json'
+          data: 'pages/data.json',
+          partials: ['partials/*.hbs']
         },
         expand: true,
         cwd: 'pages/',

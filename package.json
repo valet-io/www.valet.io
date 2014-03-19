@@ -23,6 +23,10 @@
     "gulp-stylus": "~0.1.0",
     "assemble": "~0.4.37",
     "assemble-contrib-permalinks": "~0.3.6",
-    "gulp-load-plugins": "~0.4.0"
+    "gulp-load-plugins": "~0.4.0",
+    "node-static": "~0.7.3",
+    "gulp-util": "~2.2.14",
+    "gulp-livereload": "~1.2.0",
+    "gulp-grunt": "~0.4.1"
   }
 }

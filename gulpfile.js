@@ -7,7 +7,6 @@ gulp.task('styles', function () {
   return gulp.src('styles/main.styl')
     .pipe(plugins.stylus({
       use: ['nib'],
-      set: ['compress'],
       import: ['nib']
     }))
     .pipe(gulp.dest('./build/css'));

@@ -34,7 +34,9 @@ gulp.task('server', function(done) {
   });
 });
 
-gulp.task('watch', ['server'], function () {
+gulp.task('build', ['grunt-assemble', 'styles', 'images']);
+
+gulp.task('serve', ['build', 'server'], function () {
   var livereload = plugins.livereload();
   gulp.watch('styles/*.styl', ['styles']);
   gulp.watch('images/**/*', ['images']);

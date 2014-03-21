@@ -1,5 +1,5 @@
 .links
-  border = 1px solid rgba(lighten(black, 50%), .1)
+  border = 0 solid rgba(lighten(black, 35%), .1)
   border-bottom: border
 
   section
@@ -9,6 +9,7 @@
       display: block
       padding: 1em
       border-top: border
+      border-top-width: 1px
 
     i
       color = desaturate($green, 30%)
@@ -28,3 +29,25 @@
       line-height: 1.5em
 
     color: lighten(black, 40%)
+
+  @media $tablet
+    display: table
+
+    section
+      display: table-cell
+      width: 33.333%
+
+      a
+        padding: 2em 1em
+        border: border
+
+      &:nth-child(1) a
+        border-left-width: 1px
+      &:nth-child(2) a
+        border-left-width: 1px
+        border-right-width: 1px
+      &:nth-child(3) a
+        border-right-width: 1px
+
+      h2
+        margin-top: 1em

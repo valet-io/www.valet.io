@@ -1,0 +1,7 @@
+{
+  "name": "www-valet-io",
+  "root": "./build",
+  "clean_urls": true,
+  "cache_control": {},
+  "routes": {}
+}

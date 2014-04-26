@@ -1,4 +1,18 @@
 {
   "node": true,
-  "es5": false
+  "indent": 2,
+  "eqeqeq": true,
+  "freeze": true,
+  "latedef": true,
+  "newcap": true,
+  "camelcase": true,
+  "noempty": true,
+  "nonbsp": true,
+  "nonew": true,
+  "quotmark": "single",
+  "undef": true,
+  "unused": true,
+  "strict": true,
+  "trailing": true,
+  "maxparams": 4
 }

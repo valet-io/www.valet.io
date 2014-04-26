@@ -16,6 +16,9 @@
   "bugs": {
     "url": "https://github.com/valet-io/www.valet.io/issues"
   },
+  "scripts": {
+    "build": "gulp build"
+  },
   "homepage": "https://github.com/valet-io/www.valet.io",
   "devDependencies": {
     "grunt": "~0.4.4",

@@ -1,6 +1,6 @@
 language: node_js
 node_js: '0.10'
-script: 'npm run build'
+script: npm run build
 deploy:
   - provider: divshot
     api_key:
@@ -13,6 +13,7 @@ deploy:
       secure: fp7WGhALw04OM3KMYkNKj1iKFp2LweWjdkZh+bprUh/1S6nk6bRlb17GANUuTc/UaQidJpdc+qp93OVBVE+042WiOp2/nc64xxyuPgiv2CGd2+lBcoZzIq2TXTTbwd4NM748tTDy+o89RudxUNb9CfcNLKu+NqWhP0dP7wht5Ng=
     environment: staging
     on: master
+    skip_cleanup: true
   - provider: divshot
     api_key:
       secure: fp7WGhALw04OM3KMYkNKj1iKFp2LweWjdkZh+bprUh/1S6nk6bRlb17GANUuTc/UaQidJpdc+qp93OVBVE+042WiOp2/nc64xxyuPgiv2CGd2+lBcoZzIq2TXTTbwd4NM748tTDy+o89RudxUNb9CfcNLKu+NqWhP0dP7wht5Ng=

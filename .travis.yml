@@ -1,0 +1,22 @@
+language: node_js
+node_js: '0.10'
+deploy:
+  - provider: divshot
+    api_key:
+      secure: fp7WGhALw04OM3KMYkNKj1iKFp2LweWjdkZh+bprUh/1S6nk6bRlb17GANUuTc/UaQidJpdc+qp93OVBVE+042WiOp2/nc64xxyuPgiv2CGd2+lBcoZzIq2TXTTbwd4NM748tTDy+o89RudxUNb9CfcNLKu+NqWhP0dP7wht5Ng=
+    environment: development
+    on: develop
+    skip_cleanup: true
+  - provider: divshot
+    api_key:
+      secure: fp7WGhALw04OM3KMYkNKj1iKFp2LweWjdkZh+bprUh/1S6nk6bRlb17GANUuTc/UaQidJpdc+qp93OVBVE+042WiOp2/nc64xxyuPgiv2CGd2+lBcoZzIq2TXTTbwd4NM748tTDy+o89RudxUNb9CfcNLKu+NqWhP0dP7wht5Ng=
+    environment: staging
+    on: master
+  - provider: divshot
+    api_key:
+      secure: fp7WGhALw04OM3KMYkNKj1iKFp2LweWjdkZh+bprUh/1S6nk6bRlb17GANUuTc/UaQidJpdc+qp93OVBVE+042WiOp2/nc64xxyuPgiv2CGd2+lBcoZzIq2TXTTbwd4NM748tTDy+o89RudxUNb9CfcNLKu+NqWhP0dP7wht5Ng=
+    environment: production
+    on:
+      branch: master
+      tags: true
+    skip_cleanup: true

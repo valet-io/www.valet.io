@@ -1,8 +1,4 @@
-{{#if header.transparent}}
-<header id="main-header" class="transparent">
-{{else}}
-<header id="main-header">
-{{/if}}
+<header id="main-header" {{#if header.transparent}} class="transparent" {{/if}}>
   <div class="container">
     <h1>
       <a href="/">Valet.io</a>

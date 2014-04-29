@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="614px" height="503px" viewBox="0 0 614 503" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.1 (7597) - http://www.bohemiancoding.com/sketch -->
+    <title>projector</title>
+    <description>Created with Sketch.</description>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#141414" offset="0%"></stop>
+            <stop stop-color="#202020" offset="77.9762509%"></stop>
+            <stop stop-color="#111111" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="-3" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetInner1" result="shadowBlurInner1"></feGaussianBlur>
+            <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.139393682 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner2"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetInner2" result="shadowBlurInner2"></feGaussianBlur>
+            <feComposite in="shadowBlurInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.175 0" in="shadowInnerInner2" type="matrix" result="shadowMatrixInner2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner2"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-(Try-State)" sketch:type="MSArtboardGroup" transform="translate(-171.000000, -126.000000)">
+            <g id="Projector-Screen" sketch:type="MSLayerGroup" transform="translate(161.000000, 116.000000)">
+                <path d="M320,498.070889 C323.392294,498.556119 326,501.473528 326,505 C326,508.865993 322.865993,512 319,512 C315.134007,512 312,508.865993 312,505 C312,501.473528 314.607706,498.556119 318,498.070889 L318,479 L320,479 L320,498.070889 Z M319,510 C321.761424,510 324,507.761424 324,505 C324,502.238576 321.761424,500 319,500 C316.238576,500 314,502.238576 314,505 C314,507.761424 316.238576,510 319,510 Z" id="Oval-5" stroke="#171717" stroke-width="0.25" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup"></path>
+                <rect id="Rectangle-12" fill="#E2E2E2" filter="url(#filter-2)" sketch:type="MSShapeGroup" x="15" y="28" width="602" height="455"></rect>
+                <rect id="Rectangle-13" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" x="10" y="10" width="614" height="21" rx="2"></rect>
+                <rect id="Rectangle-14" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" x="14" y="482" width="607" height="5" rx="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

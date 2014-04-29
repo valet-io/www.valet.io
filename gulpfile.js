@@ -9,7 +9,7 @@ var http       = require('http');
 plugins.grunt(gulp);
 
 gulp.task('styles', function () {
-  return gulp.src('styles/main.styl')
+  return gulp.src('styles/*.styl')
     .pipe(plugins.stylus({
       use: ['nib'],
       import: ['nib']

@@ -132,14 +132,15 @@ header.hero
       transform: translateX(-500px)
 
     .projector-beam
-      transition: transform .5s ease-in, opacity .25s ease-in .25s
+      transition: transform .5s ease-in, opacity .5s ease-in, filter .15s ease-in .35s
       transform: scaleX(0)
       opacity: 0
+      -webkit-filter: blur(2px)
 
     .projector
+      transition: all .5s ease-out .5s
       opacity: 0
       transform: translate(-500px, 365px)
-      transition: opacity .5s ease-out .5s, transform .5s ease-out .5s
 
     .phone
       transition: all .5s ease-in-out 1s

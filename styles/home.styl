@@ -28,7 +28,7 @@ header.hero
   h1
     font-weight: 500
     font-size: 2.2em
-    margin-top: 1.2em
+    margin-top: 1em
     margin-bottom: .5em
 
   h2
@@ -45,6 +45,7 @@ header.hero
     padding-right: @padding-left
 
   $phone-ratio = 0.48
+  $projector-ratio = 2
   $projector-screen-ratio = 1.22
 
   .demo
@@ -62,7 +63,7 @@ header.hero
     margin-right: auto
     height: 250px
 
-  .projector
+  .projector, .projector-screen, projector-beam
     display: none
 
   @media $desktop
@@ -91,36 +92,70 @@ header.hero
       width: @height * $phone-ratio
       z-index: 20
 
+    .projector
+      display: block
+      position: absolute
+      top: 375px
+      left: 140px
+      height: 45px
+      width: $projector-ratio * @height
+      background: url('/images/projector.svg') no-repeat
+      background-size: auto 100%
+      z-index: 10
+
+    .projector-beam
+      display: block
+      position: absolute
+      top: 316px
+      left: 14px
+      height: 65px
+      width: 350px
+      background: url('/images/projector-beam.svg') no-repeat
+      z-index: 8
+
     .projector-screen
       display: block
       position: absolute
       transform: translate(10px, 45px)
       width: 350px
       height: round(@width * (1 / $projector-screen-ratio))
-      background: url('/images/projector.svg') no-repeat
+      background: url('/images/projector-screen.svg') no-repeat
       background-size: auto 100%
       z-index: 10
 
   &.try-it
     
     .text
-      transition: width .5s ease-in-out .5s, height .5s ease-in-out .5s, opacity .5s ease-in-out
+      transition: width .5s ease-in-out 2s, height .5s ease-in-out 2s, opacity 2s ease-in-out
       opacity: 0
       width: 0
       height: 0
+      overflow: hidden
+
+
     .demo
-      transition: all .5s ease-in-out .5s
+      transition: all .5s ease-in-out 2s
       width: 100%
       $height = 500px
       min-height: $height + 50px
 
+      .projector-beam
+        transition: transform .5s ease-in 1s, opacity .1s 1.4s
+        transform: scaleX(0)
+        opacity: 0
+
+      .projector
+        opacity: 0
+        transition: opacity .5s ease-out 1.5s
+
       .phone
-        transition: all .5s ease-in-out .5s
+        transition: all .5s ease-in-out 2s
         transform: translate(0, 15px)
         height: .9 * $height
         width: @height * $phone-ratio
+
       .projector-screen
-        transition: all .5s ease-in-out .5s
+        transition: all .5s ease-in-out 2s
         transform: translate(0, 0)
         height: $height
         width: @height * $projector-screen-ratio 

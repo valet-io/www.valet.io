@@ -45,7 +45,7 @@ header.hero
     padding-right: @padding-left
 
   $phone-ratio = 0.48
-  $projection-screen-ratio = 1.22
+  $projector-screen-ratio = 1.22
 
   .demo
     position: relative
@@ -91,12 +91,12 @@ header.hero
       width: @height * $phone-ratio
       z-index: 20
 
-    .projection-screen
+    .projector-screen
       display: block
       position: absolute
       transform: translate(10px, 45px)
       width: 350px
-      height: round(@width * (1 / $projection-screen-ratio))
+      height: round(@width * (1 / $projector-screen-ratio))
       background: url('/images/projector.svg') no-repeat
       background-size: auto 100%
       z-index: 10
@@ -119,11 +119,11 @@ header.hero
         transform: translate(0, 15px)
         height: .9 * $height
         width: @height * $phone-ratio
-      .projection-screen
+      .projector-screen
         transition: all .5s
         transform: translate(0, 0)
         height: $height
-        width: @height * $projection-screen-ratio 
+        width: @height * $projector-screen-ratio 
 
 .links
   border = 0 solid rgba(lighten(black, 35%), .1)

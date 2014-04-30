@@ -104,23 +104,23 @@ header.hero
   &.try-it
     
     .text
-      transition: all .5s
+      transition: width .5s ease-in-out .5s, height .5s ease-in-out .5s, opacity .5s ease-in-out
       opacity: 0
       width: 0
       height: 0
     .demo
-      transition: all .5s
+      transition: all .5s ease-in-out .5s
       width: 100%
       $height = 500px
       min-height: $height + 50px
 
       .phone
-        transition: all .5s
+        transition: all .5s ease-in-out .5s
         transform: translate(0, 15px)
         height: .9 * $height
         width: @height * $phone-ratio
       .projector-screen
-        transition: all .5s
+        transition: all .5s ease-in-out .5s
         transform: translate(0, 0)
         height: $height
         width: @height * $projector-screen-ratio 

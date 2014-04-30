@@ -30,6 +30,20 @@
     "node-static": "~0.7.3",
     "gulp-util": "~2.2.14",
     "gulp-livereload": "~1.2.0",
-    "gulp-grunt": "~0.4.1"
+    "gulp-grunt": "~0.4.1",
+    "vinyl-source-stream": "~0.1.1",
+    "browserify": "~3.44.2",
+    "browserify-shim": "~3.4.1"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "jquery": "./components/jquery/dist/jquery.js"
+  },
+  "browserify-shim": {
+    "jquery": "$"
   }
 }

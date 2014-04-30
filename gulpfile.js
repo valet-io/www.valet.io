@@ -4,6 +4,8 @@ var gulp       = require('gulp');
 var gutil      = require('gulp-util');
 var plugins    = require('gulp-load-plugins')();
 var nodeStatic = require('node-static');
+var browserify = require('browserify');
+var source     = require('vinyl-source-stream');
 var http       = require('http');
 
 plugins.grunt(gulp);
@@ -22,7 +24,14 @@ gulp.task('images', function () {
     .pipe(gulp.dest('build/images'));
 });
 
-gulp.task('server', function(done) {
+gulp.task('js', function () {
+  return browserify('./js/main.js')
+    .bundle()
+    .pipe(source('main.js'))
+    .pipe(gulp.dest('build/js'));
+});
+
+gulp.task('server', function (done) {
   var server = new nodeStatic.Server('./build');
   http.createServer(function (request, response) {
     request.addListener('end', function () {
@@ -34,7 +43,7 @@ gulp.task('server', function(done) {
   });
 });
 
-gulp.task('build', ['grunt-assemble', 'styles', 'images']);
+gulp.task('build', ['grunt-assemble', 'styles', 'images', 'js']);
 
 gulp.task('serve', ['build', 'server'], function () {
   var livereload = plugins.livereload();

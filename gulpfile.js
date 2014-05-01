@@ -7,6 +7,7 @@ var nodeStatic = require('node-static');
 var browserify = require('browserify');
 var source     = require('vinyl-source-stream');
 var http       = require('http');
+var open       = require('open');
 
 plugins.grunt(gulp);
 
@@ -39,6 +40,7 @@ gulp.task('server', function (done) {
     }).resume();
   }).listen(8000, function() {
     gutil.log('Server listening on port: ' + gutil.colors.magenta(8000));
+    open('http://localhost:8000');
     done();
   });
 });

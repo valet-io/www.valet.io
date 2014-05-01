@@ -51,7 +51,7 @@ gulp.task('build', ['grunt-assemble', 'styles', 'images', 'js']);
 
 gulp.task('serve', ['build', 'server'], function () {
   var livereload = plugins.livereload();
-  gulp.watch('styles/*.styl', ['styles']);
+  gulp.watch('styles/**/*.styl', ['styles']);
   gulp.watch('images/**/*', ['images']);
   gulp.watch('js/*.js', ['js']);
   gulp.watch(['layouts/*', 'pages/**/*', 'partials/*'], ['grunt-assemble']);

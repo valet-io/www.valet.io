@@ -7,6 +7,7 @@ var nodeStatic = require('node-static');
 var browserify = require('browserify');
 var source     = require('vinyl-source-stream');
 var http       = require('http');
+var open       = require('open');
 
 plugins.grunt(gulp);
 
@@ -36,9 +37,12 @@ gulp.task('server', function (done) {
   http.createServer(function (request, response) {
     request.addListener('end', function () {
       server.serve(request, response);
-    }).resume();
-  }).listen(8000, function() {
+    })
+    .resume();
+  })
+  .listen(8000, function() {
     gutil.log('Server listening on port: ' + gutil.colors.magenta(8000));
+    open('http://localhost:8000');
     done();
   });
 });
@@ -47,7 +51,7 @@ gulp.task('build', ['grunt-assemble', 'styles', 'images', 'js']);
 
 gulp.task('serve', ['build', 'server'], function () {
   var livereload = plugins.livereload();
-  gulp.watch('styles/*.styl', ['styles']);
+  gulp.watch('styles/**/*.styl', ['styles']);
   gulp.watch('images/**/*', ['images']);
   gulp.watch('js/*.js', ['js']);
   gulp.watch(['layouts/*', 'pages/**/*', 'partials/*'], ['grunt-assemble']);

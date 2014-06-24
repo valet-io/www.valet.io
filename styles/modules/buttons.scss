@@ -20,7 +20,7 @@
 }
 
 .button-green {
-  background: linear-gradient(bottom, $green 2%, darken($green, 10%) 10%, $green);
+  @include linear-gradient(bottom, $green 2%, darken($green, 10%) 10%, $green);
   border: 1px solid darken($green, 25%);
   color: white;
 

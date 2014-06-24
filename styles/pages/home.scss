@@ -6,7 +6,7 @@ header.hero {
   margin-right: -10px;
 
   color: white;
-  background:  linear-gradient(150deg, saturate(darken($valet-io-color, 20%), 20%), rgb(225, 65, 0) 50%, rgb(210, 111, 0));
+  @include background(linear-gradient(150deg, saturate(darken($valet-io-color, 20%), 20%), rgb(225, 65, 0) 50%, rgb(210, 111, 0)));
 
   text-shadow: 0 1px 2px rgba(black, .2);
   -webkit-font-smoothing: antialiased;
@@ -18,7 +18,7 @@ header.hero {
     bottom: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(bottom, rgba(black, .5), rgba(black, .1) 25%, transparent);
+    @include background(linear-gradient(bottom, rgba(black, .5), rgba(black, .1) 25%, transparent));
   }
 
   .text {
@@ -98,7 +98,7 @@ header.hero {
 
     .phone {
       position: absolute;
-      transform: translate(750px, -20px) scale(.7);
+      @include transform(translate(750px, -20px) scale(.7));
       height: $height;
       width: $height * $phone-ratio;
       z-index: 20;
@@ -107,7 +107,7 @@ header.hero {
     .projector {
       display: block;
       position: absolute;
-      transform: translate(612px, 365px);
+      @include transform(translate(612px, 365px));
       height: 45px;
       width: $projector-ratio * 45px;
       background: url('/images/projector.svg') no-repeat;
@@ -130,7 +130,7 @@ header.hero {
     .projector-screen {
       display: block;
       position: absolute;
-      transform: translate(350px, -75px) scale(.58);
+      @include transform(translate(350px, -75px) scale(.58));
       height: $height;
       width: $projector-screen-ratio * $height;
       background: url('/images/projector-screen.svg') no-repeat;
@@ -147,7 +147,7 @@ header.hero {
       border-top: 1px solid rgba(white, .2);
 
       opacity: 0;
-      transform: translateY(-1000px);
+      @include transform(translateY(-1000px));
 
       h2 {
         font-size: 2.5em;
@@ -204,7 +204,6 @@ header.hero {
 
 .links {
   $border: 0 solid rgba(lighten(black, 35%), .1);
-  $border-bottom: border;
 
   section {
     text-align: center;
@@ -224,12 +223,12 @@ header.hero {
 
     i {
       $color: desaturate($green, 30%);
-      $display: inline-block;
+      display: inline-block;
 
       font-size: 4em;
       border-radius: 50%;
-      border: 3px solid color;
-      color: color;
+      border: 3px solid $color;
+      color: $color;
       padding: .5em;
     }
 
@@ -253,7 +252,7 @@ header.hero {
 
       a {
         padding: 2em 1em;
-        border: border;
+        border: $border;
       }
 
       &:nth-child(1) a {

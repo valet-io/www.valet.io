@@ -1,0 +1,16 @@
+.form {
+  padding: 1em 0;
+}
+
+.form-control {
+  font-size: 1em;
+  padding: .5em;
+  margin: 1em 0;
+
+  border-radius: 5px;
+
+  outline: none;
+  border: 2px solid silver;
+
+  transition: border .25s;
+}

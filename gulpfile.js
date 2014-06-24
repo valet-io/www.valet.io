@@ -13,7 +13,9 @@ plugins.grunt(gulp);
 
 gulp.task('styles', function () {
   return gulp.src('styles/main.scss')
-    .pipe(plugins.sass())
+    .pipe(plugins.sass({
+      includePaths: require('node-bourbon').includePaths
+    }))
     .pipe(gulp.dest('./build/css'));
 });
 

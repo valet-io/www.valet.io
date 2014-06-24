@@ -1,17 +1,22 @@
-// global-reset()
-// reset-html5()
+@import 'modules/reset';
 
-// *
-//   box-sizing: border-box
+
+@import 'bourbon';
 
 @import 'modules/variables';
-// @import 'modules/grid'
-// @import 'modules/type'
-// @import 'modules/icons'
-// @import 'modules/form'
+@import 'modules/grid';
+@import 'modules/type';
+@import 'modules/icons';
+@import 'modules/forms';
 @import 'modules/buttons';
-// @import 'modules/header'
+@import 'modules/header';
 
-// body {
-//   background: $background-color;
-// }
+@import 'pages/home';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $background-color;
+}

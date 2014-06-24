@@ -12,11 +12,8 @@ var open       = require('open');
 plugins.grunt(gulp);
 
 gulp.task('styles', function () {
-  return gulp.src('styles/*.styl')
-    .pipe(plugins.stylus({
-      use: ['nib'],
-      import: ['nib']
-    }))
+  return gulp.src('styles/main.scss')
+    .pipe(plugins.sass())
     .pipe(gulp.dest('./build/css'));
 });
 

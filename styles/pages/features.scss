@@ -3,9 +3,87 @@
     @include background(linear-gradient(-180deg, #3B0014 0%, #620A0F 17%, #E03B3B 100%));
     text-align: center;
 
-    h2 {
-      color: #DADADA;
-      font-weight: 300;
+    .headlines {
+      padding: 1em 0;
+      margin-bottom: .5em;
+      border-bottom: 1px solid rgba(white, .25);
     }
+
+    h1 {
+      font-size: 1.5em;
+      @media #{$tablet} {
+        font-size: 3em;
+      }
+      margin-bottom: .5em;
+    }
+
+    h2 {
+      font-size: 1em;
+      @media #{$tablet} {
+        font-size: 2em;
+        font-weight: 300;
+      }
+      color: #DADADA;
+    }
+
+    h3 {
+      font-size: 1.25em;
+      margin: .5em 0;
+      color: white;
+    }
+
+    h4 {
+      display: none;
+      line-height: 1.2em;
+      color: rgba(white, .8);
+      text-shadow: none;
+
+      @media #{$tablet} {
+        display: block;
+      }
+    }
+  }
+
+  .section-tiles {
+    @include display(flex);
+
+    @media #{$desktop} {
+      padding-bottom: 1em;
+    } 
+
+    li {
+      @include flex(1);
+      padding: 1em;
+      text-align: center;
+      @media #{$desktop} {
+        text-align: left;        
+      }
+    }
+
+    a {
+      display: block;
+      @media #{$desktop} {
+        @include display(flex);
+        @include align-items(center);
+      }
+    }
+  }
+
+  .section-tile-icon {
+    display: inline-block;
+    font-size: 3em;
+    color: white;
+    text-shadow: rgba(black, .25) 0 1px 1px;
+    border-radius: .2em;
+    @include background(linear-gradient(44deg, #29B229 0%, #2FB841 50%, #4BD334 100%), green);
+    box-shadow: rgba(black, .25) 0 1px 2px;
+    padding: .4em;
+    @media #{$desktop} {
+      margin-right: .5em;  
+    }
+  }
+
+  .tile-body {
+    @include flex(1 0);
   }
 }

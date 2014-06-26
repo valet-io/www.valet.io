@@ -6,7 +6,7 @@ body {
 
 h1 {
   font-size: 2em;
-  margin-top: .5em;
+  margin-top: 1em;
   margin-bottom: 1em;
 
   @media #{$tablet} {
@@ -19,7 +19,7 @@ h1 {
 
 h2 {
   font-size: 1.6em;
-  margin-top: .25em;
+  margin-top: .5em;
   margin-bottom: .5em;
 
   @media #{$tablet} {

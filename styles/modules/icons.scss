@@ -9,7 +9,7 @@
   font-style: normal;
 }
 
-i.icon {
+.icon {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -24,7 +24,7 @@ i.icon {
 }
 
 $i: 0;
-@each $icon in (credit, mobile, projection, phone, bubble) {
+@each $icon in (credit, mobile, projection, phone, bubble, mail, twitter, facebook) {
   .icon-#{$icon}:before {
     content: '\e60#{$i}';
   }

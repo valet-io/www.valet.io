@@ -31,10 +31,6 @@
 
   @media #{$desktop} {
 
-    .container {
-      @include clearfix;
-    }
-
     $height: 500px;
 
     .demo {

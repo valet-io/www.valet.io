@@ -1,0 +1,36 @@
+$background: #323232;
+$text: #C8C8C8;
+
+#main-footer {
+  margin-left: -10px;
+  margin-right: -10px;
+  background: $background;
+
+
+  .container {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: $text;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(space-between);
+  };
+
+  // .copyright {
+  //   display: block;
+  // }
+
+  .contact-icons {
+    li {
+      display: inline;
+    }
+    i {
+      display: inline-block;
+      padding: .4em;
+      background: $text;
+      color: $background;
+      border-radius: 50%;
+      margin: 0 .25em;
+    }
+  }
+}

@@ -10,7 +10,7 @@
     }
 
     h1 {
-      font-size: 1.5em;
+      font-size: 2.5em;
       @media #{$tablet} {
         font-size: 3em;
       }
@@ -18,7 +18,7 @@
     }
 
     h2 {
-      font-size: 1em;
+      font-size: 1.5em;
       @media #{$tablet} {
         font-size: 2em;
         font-weight: 300;
@@ -27,7 +27,9 @@
     }
 
     h3 {
-      font-size: 1.25em;
+      @media #{$tablet} {
+        font-size: 1.25em;        
+      }
       margin: .5em 0;
       color: white;
     }
@@ -108,17 +110,37 @@
       padding: .5em 0;
     }
 
+    .detail-list {
+
+      .detail {
+        display: block;
+        @include display(flex);
+      }
+
+      i {
+        font-size: 2em;
+        margin-right: .5em;
+        color: #3BAD3B;
+      }
+
+      .detail-body {
+        @include flex(1 0);
+      }
+
+    }
+
     h2 {
       font-size: 2em;
       color: #292E31;
     }
 
     h3 {
-      font-size: 1em;
+      font-size: 1.2em;
       color: #616161;
     }
 
     h4 {
+      font-size: 1.1em;
       font-weight: 500;
       margin-bottom: .25em;
     }

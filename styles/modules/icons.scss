@@ -23,15 +23,10 @@ i.icon {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-projection:before {
-  content: "\e602";
+$i: 0;
+@each $icon in (credit, mobile, projection, phone, bubble) {
+  .icon-#{$icon}:before {
+    content: '\e60#{$i}';
+  }
+  $i: $i+1;
 }
-
-.icon-credit:before {
-  content: "\e600";
-}
-
-.icon-mobile:before {
-  content: "\e601";
-}
-

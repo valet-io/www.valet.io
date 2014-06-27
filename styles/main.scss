@@ -21,3 +21,17 @@
 body {
   background: $background-color;
 }
+
+a {
+  color: #008CDD;
+}
+
+.arrow {
+  &:after {
+    content: '\25b6';
+    font-size: .5em;
+    position: relative;
+    left: .5em;
+    bottom: .1em;
+  }
+}

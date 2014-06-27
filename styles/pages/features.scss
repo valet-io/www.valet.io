@@ -86,4 +86,53 @@
   .tile-body {
     @include flex(1 0);
   }
+
+  .section-shaded {
+    background: #F6F9FC;
+  }
+
+  section {
+    margin-right: -10px;
+    margin-left: -10px;
+    padding: 2em 0;
+    border-bottom: 1px solid #DEDEDE;
+
+    .headlines {
+      text-align: center;
+      border-bottom: 1px solid #B6B6B6;
+      padding-bottom: 2em;
+      margin-bottom: 2em;
+    }
+
+    .detail {
+      padding: .5em 0;
+    }
+
+    h2 {
+      font-size: 2em;
+      color: #292E31;
+    }
+
+    h3 {
+      font-size: 1em;
+      color: #616161;
+    }
+
+    h4 {
+      font-weight: 500;
+      margin-bottom: .25em;
+    }
+
+    p {
+      line-height: 1.25em;
+      color: #4A4A4A;
+    }
+
+    a {
+      display: block;
+      margin: .5em 0;
+    }
+
+  }
+
 }

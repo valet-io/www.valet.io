@@ -38,6 +38,7 @@ gulp.task('server', function (done) {
   )
   .listen(8000, function () {
     gutil.log('Running on http://localhost:' + server.address().port);
+    done();
   });
 });
 
@@ -45,6 +46,7 @@ gulp.task('build', ['grunt-assemble', 'styles', 'images', 'js']);
 
 gulp.task('serve', ['build', 'server'], function () {
   var livereload = plugins.livereload();
+  plugins.livereload.listen();
   gulp.watch('styles/**/*.scss', ['styles']);
   gulp.watch('images/**/*', ['images']);
   gulp.watch('js/*.js', ['js']);

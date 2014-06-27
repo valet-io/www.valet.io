@@ -13,20 +13,23 @@
     margin-top: 1em;
   }     
 
-  .phone {
-    background: url('/images/iphone-5s.svg') no-repeat;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: 75% top;
-    width: 80%;
-    max-width: 320px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 250px;
+  .projector, .projector-screen, .projector-beam, .phone {
+    display: none;
   }
 
-  .projector, .projector-screen, .projector-beam {
-    display: none;
+  .projector-content {
+    background: url('/images/projector-contents.svg') no-repeat;
+    width: 580px;
+    height: 435px;
+    @include transform(translate(15px, 25px));
+  }
+
+  .phone-content {
+    background: url('/images/phone-contents.svg') no-repeat;
+    background-size: 100%;
+    width: 210px;
+    height: 375px;
+    @include transform(translate(15px, 60px));
   }
 
   @media #{$desktop} {
@@ -49,6 +52,13 @@
     }
 
     .phone {
+      display: block;
+      background: url('/images/iphone-5s.svg') no-repeat;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: 75% top;
+      margin-left: auto;
+      margin-right: auto;
       position: absolute;
       @include transform(translate(750px, -20px) scale(.7));
       height: $height;

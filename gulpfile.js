@@ -3,7 +3,7 @@
 var gulp       = require('gulp');
 var gutil      = require('gulp-util');
 var plugins    = require('gulp-load-plugins')();
-var nodeStatic = require('node-static');
+var connect    = require('connect');
 var browserify = require('browserify');
 var source     = require('vinyl-source-stream');
 var http       = require('http');
@@ -32,17 +32,12 @@ gulp.task('js', function () {
 });
 
 gulp.task('server', function (done) {
-  var server = new nodeStatic.Server('./build');
-  http.createServer(function (request, response) {
-    request.addListener('end', function () {
-      server.serve(request, response);
-    })
-    .resume();
-  })
-  .listen(8000, function() {
-    gutil.log('Server listening on port: ' + gutil.colors.magenta(8000));
-    open('http://localhost:8000');
-    done();
+  var server = http.createServer(connect()
+    .use(require('connect-livereload')())
+    .use(connect.static('build'))
+  )
+  .listen(8000, function () {
+    gutil.log('Running on http://localhost:' + server.address().port);
   });
 });
 

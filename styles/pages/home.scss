@@ -100,34 +100,34 @@
       z-index: 10;
     }
 
-    .try-it-form {
-      position: absolute;
-      width: 100%;
+    // .try-it-form {
+    //   position: absolute;
+    //   width: 100%;
 
-      font-size: 1.25em;
-      text-align: center;
-      border-top: 1px solid rgba(white, .2);
+    //   font-size: 1.25em;
+    //   text-align: center;
+    //   border-top: 1px solid rgba(white, .2);
 
-      opacity: 0;
-      @include transform(translateY(-1000px));
+    //   opacity: 0;
+    //   @include transform(translateY(-1000px));
 
-      h2 {
-        font-size: 2.5em;
-        margin: .25em 0;
-        font-weight: 500;
-      }
+    //   h2 {
+    //     font-size: 2.5em;
+    //     margin: .25em 0;
+    //     font-weight: 500;
+    //   }
 
-      .form-control, .button {
-        display: block;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-      }
+    //   .form-control, .button {
+    //     display: block;
+    //     width: 50%;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    //   }
 
-      .button {
-        margin-top: .75em;
-      }
-    }
+    //   .button {
+    //     margin-top: .75em;
+    //   }
+    // }
   }
 
   .links {

@@ -157,6 +157,44 @@
 
   }
 
+  .view {
+    display: none;
+  }
+
+  @media #{$tablet} {
+    .view {
+      display: block;
+    }
+  }
+
+  .view-content {
+    display: block;
+    max-height: 400px;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin: 0 auto;
+    box-shadow: rgba(black, .2) 0 1px 1px;
+  }
+
+  #momentum .content, #easy .content {
+    @media #{$tablet} {
+      @include display(flex);
+
+      .details {
+        @include flex(8);
+      }
+
+      .view {
+        @include flex(4);
+      }
+
+      .view {
+        padding-left: 5em;
+      }
+    }
+  }
+
   footer {
     background: #F6F9FC;
 

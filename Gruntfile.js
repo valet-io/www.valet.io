@@ -16,7 +16,7 @@ module.exports = function (grunt) {
       pages: {
         options: {
           data: 'pages/data.json',
-          partials: ['partials/*.hbs'],
+          partials: ['partials/**/*.hbs'],
           permalinks: {
             preset: 'pretty'
           }

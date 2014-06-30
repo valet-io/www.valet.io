@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="614px" height="503px" viewBox="0 0 614 503" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<svg width="120px" height="60px" viewBox="0 0 120 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <!-- Generator: Sketch 3.0.1 (7597) - http://www.bohemiancoding.com/sketch -->
     <title>projector</title>
     <description>Created with Sketch.</description>
     <defs>
-        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
-            <stop stop-color="#141414" offset="0%"></stop>
-            <stop stop-color="#202020" offset="77.9762509%"></stop>
-            <stop stop-color="#111111" offset="100%"></stop>
-        </linearGradient>
-        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
-            <feOffset dx="0" dy="-3" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
             <feGaussianBlur stdDeviation="1" in="shadowOffsetInner1" result="shadowBlurInner1"></feGaussianBlur>
             <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.139393682 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
-            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner2"></feOffset>
-            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetInner2" result="shadowBlurInner2"></feGaussianBlur>
-            <feComposite in="shadowBlurInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.175 0" in="shadowInnerInner2" type="matrix" result="shadowMatrixInner2"></feColorMatrix>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
             <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
                 <feMergeNode in="SourceGraphic"></feMergeNode>
                 <feMergeNode in="shadowMatrixInner1"></feMergeNode>
-                <feMergeNode in="shadowMatrixInner2"></feMergeNode>
             </feMerge>
         </filter>
     </defs>
     <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Desktop-(Try-State)" sketch:type="MSArtboardGroup" transform="translate(-171.000000, -126.000000)">
-            <g id="Projector-Screen" sketch:type="MSLayerGroup" transform="translate(161.000000, 116.000000)">
-                <path d="M320,498.070889 C323.392294,498.556119 326,501.473528 326,505 C326,508.865993 322.865993,512 319,512 C315.134007,512 312,508.865993 312,505 C312,501.473528 314.607706,498.556119 318,498.070889 L318,479 L320,479 L320,498.070889 Z M319,510 C321.761424,510 324,507.761424 324,505 C324,502.238576 321.761424,500 319,500 C316.238576,500 314,502.238576 314,505 C314,507.761424 316.238576,510 319,510 Z" id="Oval-5" stroke="#171717" stroke-width="0.25" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup"></path>
-                <rect id="Rectangle-12" fill="#E2E2E2" filter="url(#filter-2)" sketch:type="MSShapeGroup" x="15" y="28" width="602" height="455"></rect>
-                <rect id="Rectangle-13" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" x="10" y="10" width="614" height="21" rx="2"></rect>
-                <rect id="Rectangle-14" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" x="14" y="482" width="607" height="5" rx="2"></rect>
+        <g id="Desktop" sketch:type="MSArtboardGroup" transform="translate(-762.000000, -499.000000)">
+            <g id="projector" sketch:type="MSLayerGroup" transform="translate(762.000000, 499.000000)">
+                <ellipse id="Oval-15" fill="#242424" sketch:type="MSShapeGroup" cx="64.5" cy="9" rx="10.5" ry="9"></ellipse>
+                <path d="M20.5131161,5 C18.8567774,5 16.7697764,6.11844937 15.84955,7.50131076 L1.0545022,29.7344282 C0.135224524,31.115864 0.727493062,32.2265107 2.39453216,32.2150087 L117.322079,31.4220441 C118.981434,31.4105951 119.586194,30.2837454 118.665285,28.8937403 L104.496474,7.50757356 C103.57895,6.12267899 101.49496,5.00000011 99.836084,5.00000011 L20.5131161,5 Z" id="Rectangle-33" fill="#4A4A4A" sketch:type="MSShapeGroup"></path>
+                <path d="M20.9383302,5 C19.2858868,5 17.2181301,6.12698489 16.3177932,7.52039967 L1.84251995,29.9231905 C0.943111194,31.3151688 1.43281055,33.0220685 2.92645671,33.7309887 L15.2338567,39.5723748 C16.7319072,40.2833854 18.9536561,39.9826717 20.2038968,38.8937369 C20.2038968,38.8937369 47.7847319,14.8868633 58.9137354,5 C75.1718716,5 20.9383302,5 20.9383302,5 Z" id="Rectangle-34" fill="#4F4F4F" sketch:type="MSShapeGroup"></path>
+                <rect id="Rectangle-32" stroke="#4A4A4A" fill="#B8B8B8" filter="url(#filter-1)" sketch:type="MSShapeGroup" x="0" y="29" width="120" height="30" rx="3"></rect>
+                <g id="Oval-14-+-Line" transform="translate(11.000000, 40.000000)" stroke="#454545" sketch:type="MSShapeGroup">
+                    <circle id="Oval-14" cx="6" cy="6" r="6"></circle>
+                    <path d="M6.14814817,3.6 L6.14814822,8.4" id="Line" stroke-linecap="round"></path>
+                </g>
+                <g id="Group" transform="translate(64.000000, 40.000000)" stroke="#2F2F2F" stroke-width="0.5" stroke-linecap="round" sketch:type="MSShapeGroup">
+                    <path d="M0.657894737,0.5 L49.3421053,0.5" id="Line"></path>
+                    <path d="M0.657894737,2.5 L49.3421053,2.5" id="Line-3"></path>
+                    <path d="M0.657894737,4.5 L49.3421053,4.5" id="Line-5"></path>
+                    <path d="M0.657894737,6.5 L49.3421053,6.5" id="Line-4"></path>
+                    <path d="M0.657894737,8.5 L49.3421053,8.5" id="Line-7"></path>
+                    <path d="M0.657894737,10.5 L49.3421053,10.5" id="Line-6"></path>
+                </g>
             </g>
         </g>
     </g>

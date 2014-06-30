@@ -1,10 +1,6 @@
 ---
 title: Home
 seo_title: Mobile Event Fundraising
-header:
-  transparent: true
-styles:
-  - 'home'
 ---
 <header class="hero">
   <div class="container">
@@ -12,34 +8,47 @@ styles:
       <h1>Event fundraising, reimagined</h1>
       <h2>We help you collect and manage donations so you can focus on what matters: building relationships.</h2>
         <div class="button-group">
-          <a class="button button-green button-large" href="/how-it-works" title="Learn how to increase your in event donations with Valet.io">Learn More</a>
-          <a class="button button-transparent button-large" href="/demo" title="Try a live demo">Try It</a>
+          <a class="button button-green button-large" href="/features" title="Learn how to increase your in event donations with Valet.io">Learn More</a>
+          <a class="button button-transparent button-large start-demo-request" id="try-it-btn" href="#" title="Try a live demo">Try It</a>
       </div>
     </div>
   <div class="demo">
     <div class="projector"></div>
-    <div class="phone"></div>
+    <div class="projector-beam"></div>
+    <div class="projector-screen">
+      <div class="projector-content"></div>
+    </div>
+    <div class="phone">
+      <div class="phone-content"></div>
+    </div>
   </div>
+  {{!-- <form class="form try-it-form">
+    <h2>Use This at Your Events</h2>
+    <input type="text" class="form-control" placeholder="Name" id="try-it-name" required />
+    <input type="text" class="form-control" placeholder="Organization Name" id="try-it-organization" required />
+    <input type="email" class="form-control" placeholder="Email" id="try-it-email" required />
+    <button type="submit" class="button button-large button-green">Submit</button>
+  </form> --}}
 </header>
 <article id="content">
   <div class="container">
     <div class="links">
       <section class="guest-experience">
-        <a href="#">
+        <a href="/features#easy">
           <i class="icon icon-mobile"></i>
           <h2>Delight your guests</h2>
           <p>Mobile giving, no downloads required.</p>
         </a>
       </section>
       <section class="momentum">
-        <a href="#">
+        <a href="/features#momentum">
           <i class="icon icon-projection"></i>
           <h2>Build momentum</h2>
           <p>Feature totals and donors live.</p>
         </a>
       </section>
       <section class="full-service">
-        <a href="#">
+        <a href="/features#payment">
           <i class="icon icon-credit"></i>
           <h2>Full-service payments</h2>
           <p>100% follow up included.</p>

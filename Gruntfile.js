@@ -10,17 +10,24 @@ module.exports = function (grunt) {
         layoutdir: 'layouts',
         layoutext: '.hbs',
         layout: 'default',
-        helpers: ['handlebars-helper-partial']
+        helpers: ['handlebars-helper-partial'],
+        plugins: ['assemble-contrib-permalinks']
       },
       pages: {
         options: {
           data: 'pages/data.json',
-          partials: ['partials/*.hbs']
+          partials: ['partials/**/*.hbs'],
+          permalinks: {
+            preset: 'pretty'
+          }
         },
-        expand: true,
-        cwd: 'pages/',
-        src: ['**/*.hbs'],
-        dest: 'build/'
+        files: [{
+          expand: true,
+          cwd: 'pages/',
+          src: ['**/*.hbs'],
+          dest: 'build/',
+          ext: '.html'
+        }]
       }
     }
   });

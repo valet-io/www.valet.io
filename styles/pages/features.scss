@@ -1,0 +1,278 @@
+#features #main-content {
+  .hero {
+    @include background(linear-gradient(-180deg, #3B0014 0%, #620A0F 17%, #E03B3B 100%));
+    text-align: center;
+
+    .headlines {
+      padding: 1em 0;
+      margin-bottom: .5em;
+      border-bottom: 1px solid rgba(white, .25);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      @media #{$tablet} {
+        font-size: 3em;
+      }
+      margin-bottom: .5em;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      @media #{$tablet} {
+        font-size: 2em;
+        font-weight: 300;
+      }
+      color: #DADADA;
+    }
+
+    h3 {
+      @media #{$tablet} {
+        font-size: 1.25em;        
+      }
+      margin: .5em 0;
+      color: white;
+    }
+
+    h4 {
+      display: none;
+      line-height: 1.2em;
+      color: rgba(white, .8);
+      text-shadow: none;
+
+      @media #{$tablet} {
+        display: block;
+      }
+    }
+  }
+
+  .section-tiles {
+    @include display(flex);
+
+    @media #{$desktop} {
+      padding-bottom: 1em;
+    } 
+
+    li {
+      @include flex(1);
+      padding: 1em;
+      text-align: center;
+      @media #{$desktop} {
+        text-align: left;        
+      }
+    }
+
+    a {
+      display: block;
+      @media #{$desktop} {
+        @include display(flex);
+        @include align-items(center);
+      }
+    }
+  }
+
+  .section-tile-icon {
+    display: inline-block;
+    font-size: 3em;
+    color: white;
+    text-shadow: rgba(black, .25) 0 1px 1px;
+    border-radius: .2em;
+    @include background(linear-gradient(44deg, #29B229 0%, #2FB841 50%, #4BD334 100%), green);
+    box-shadow: rgba(black, .25) 0 1px 2px;
+    padding: .4em;
+    @media #{$desktop} {
+      margin-right: .5em;  
+    }
+  }
+
+  .tile-body {
+    @include flex(1 0);
+  }
+
+  .section-shaded {
+    background: #F6F9FC;
+  }
+
+  section {
+    margin-right: -10px;
+    margin-left: -10px;
+    padding: 2em 0;
+    border-bottom: 1px solid #DEDEDE;
+
+    .headlines {
+      text-align: center;
+      border-bottom: 1px solid #B6B6B6;
+      padding-bottom: 2em;
+      margin-bottom: 2em;
+    }
+
+    .detail {
+      padding: .5em 0;
+    }
+
+    .detail-list {
+
+      .detail {
+        display: block;
+        @include display(flex);
+      }
+
+      i {
+        font-size: 2em;
+        margin-right: .5em;
+        color: #3BAD3B;
+      }
+
+      .detail-body {
+        @include flex(1 0);
+      }
+
+    }
+
+    h2 {
+      font-size: 2em;
+      color: #292E31;
+    }
+
+    h3 {
+      font-size: 1.2em;
+      color: #616161;
+    }
+
+    h4 {
+      font-size: 1.1em;
+      font-weight: 500;
+      margin-bottom: .25em;
+    }
+
+    p {
+      line-height: 1.25em;
+      color: #4A4A4A;
+    }
+
+    a {
+      display: block;
+      margin: .5em 0;
+    }
+
+  }
+
+  .view {
+    display: none;
+  }
+
+  @media #{$tablet} {
+    .view {
+      display: block;
+    }
+  }
+
+  .view-content {
+    display: block;
+    max-height: 400px;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin: 0 auto;
+    box-shadow: rgba(black, .2) 0 1px 1px;
+  }
+
+  #momentum .content, #easy .content {
+    @media #{$tablet} {
+      @include display(flex);
+
+      .details {
+        @include flex(8);
+      }
+
+      .view {
+        @include flex(4);
+      }
+
+      .view {
+        padding-left: 5em;
+      }
+    }
+  }
+
+  footer {
+    background: #F6F9FC;
+
+    .container {
+      @media #{$tablet} {
+        @include display(flex);
+        @include align-items(center);
+      }
+    }
+
+    .text {
+      text-align: center;
+      padding: 1em 0;
+      @media #{$tablet} {
+        @include flex(8);
+        text-align: left;
+      }
+    }
+
+    h3 {
+      font-size: 1.25em;
+      margin-bottom: .25em;
+      @media #{$tablet} {
+        font-size: 2em;
+      }
+    }
+
+    h4 {
+      color: #9B9B9B;
+      @media #{$tablet} {
+        font-size: 1.5em;
+      }
+      font-weight: 300;
+    }
+
+    .action {
+      padding: 1em 0;
+      text-align: center;
+      @media #{$tablet} {
+        @include flex(4);
+        background: rgba(#00095A, .1);
+        padding: 3em 0;
+      }
+    }
+
+    .phone {
+      display: block;
+      font-size: 2em;
+    }
+
+    .or {
+      @include display(flex);
+      text-transform: uppercase;
+      font-weight: 300;
+      margin: .5em 0;
+      color: #9B9B9B;
+      @include flex(1);
+      @include align-items(center);
+
+      &:before, &:after {
+        content: '';
+        @include flex(1);
+        height: 1px;
+        background: lighten(#9B9B9B, 20%);
+        margin: 0 1em;
+        @include align-items(center);
+      }
+
+      &:before {
+        margin-left: 5em;
+      }
+
+      &:after {
+        margin-right: 5em;
+      }
+
+    }
+
+  }
+
+}

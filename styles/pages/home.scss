@@ -1,0 +1,236 @@
+#index {
+
+  .hero {
+    @include background(linear-gradient(150deg, saturate(darken($valet-io-color, 20%), 20%), rgb(225, 65, 0) 50%, rgb(210, 111, 0)));
+  }
+
+  $phone-ratio: 0.48;
+  $projector-ratio: 2;
+  $projector-screen-ratio: 1.22;
+
+  .demo {
+    position: relative;
+    margin-top: 1em;
+  }     
+
+  .projector, .projector-screen, .projector-beam, .phone {
+    display: none;
+  }
+
+  .projector-content {
+    background: url('/images/projector-contents.svg') no-repeat;
+    width: 580px;
+    height: 435px;
+    @include transform(translate(15px, 25px));
+  }
+
+  .phone-content {
+    background: url('/images/phone-contents.svg') no-repeat;
+    background-size: 100%;
+    width: 210px;
+    height: 375px;
+    @include transform(translate(15px, 60px));
+  }
+
+  @media #{$desktop} {
+
+    $height: 500px;
+
+    .demo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: $height;
+    }
+
+    .text {
+      width: 50%;
+      padding: 2em 0;
+      // margin-bottom: 100px
+      font-size: 1.5em;
+      text-align: left;
+    }
+
+    .phone {
+      display: block;
+      background: url('/images/iphone-5s.svg') no-repeat;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: 75% top;
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+      @include transform(translate(750px, -20px) scale(.7));
+      height: $height;
+      width: $height * $phone-ratio;
+      z-index: 20;
+    }
+
+    .projector {
+      display: block;
+      position: absolute;
+      @include transform(translate(612px, 365px));
+      height: 45px;
+      width: $projector-ratio * 45px;
+      background: url('/images/projector.svg') no-repeat;
+      background-size: auto 100%;
+      z-index: 10;
+    }
+
+    .projector-beam {
+      display: block;
+      position: absolute;
+      top: 305px;
+      left: 480px;
+      height: 85px;
+      width: 350px;
+      background: url('/images/projector-beam.svg') no-repeat;
+      background-size: 100% auto;
+      z-index: 5;
+    }
+
+    .projector-screen {
+      display: block;
+      position: absolute;
+      @include transform(translate(350px, -75px) scale(.58));
+      height: $height;
+      width: $projector-screen-ratio * $height;
+      background: url('/images/projector-screen.svg') no-repeat;
+      background-size: auto 100%;
+      z-index: 10;
+    }
+
+    // .try-it-form {
+    //   position: absolute;
+    //   width: 100%;
+
+    //   font-size: 1.25em;
+    //   text-align: center;
+    //   border-top: 1px solid rgba(white, .2);
+
+    //   opacity: 0;
+    //   @include transform(translateY(-1000px));
+
+    //   h2 {
+    //     font-size: 2.5em;
+    //     margin: .25em 0;
+    //     font-weight: 500;
+    //   }
+
+    //   .form-control, .button {
+    //     display: block;
+    //     width: 50%;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    //   }
+
+    //   .button {
+    //     margin-top: .75em;
+    //   }
+    // }
+  }
+
+  .links {
+    $border: 0 solid rgba(lighten(black, 35%), .1);
+
+    section {
+      text-align: center;
+      color: lighten(black, 40%);
+
+      a {
+        display: block;
+        padding: 1em;
+        border-top: $border;
+        border-top-width: 1px;
+        color: inherit;
+
+        &:hover {
+          background: rgba(14,60,86,0.04);
+        }
+      }
+
+      i {
+        $color: desaturate($green, 30%);
+        display: inline-block;
+
+        font-size: 4em;
+        border-radius: 50%;
+        border: 3px solid $color;
+        color: $color;
+        padding: .5em;
+      }
+
+      h2 {
+        color: #292e31;
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 1.2em;
+        line-height: 1.5em;
+      }
+    }
+
+    @media #{$tablet} {
+      display: table;
+
+      section {
+        display: table-cell;
+        width: 33.333%;
+
+        a {
+          padding: 2em 1em;
+          border: $border;
+        }
+
+        &:nth-child(1) a {
+          border-left-width: 1px;
+        }
+        &:nth-child(2) a {
+          border-left-width: 1px;
+          border-right-width: 1px;
+        }
+        &:nth-child(3) a {
+          border-right-width: 1px;
+        }
+
+        h2 {
+          margin-top: 1em;
+        }
+      }
+    }
+  }
+}
+
+  // &.try-it {
+  //   min-height: 920px;
+    
+  //   .text {
+  //     transition: opacity .5s ease-in .5s, transform .5s ease-out .5s;
+  //     opacity: 0;
+  //     transform: translateX(-500px);
+  //   }
+
+  //   .projector-beam
+  //     transition: transform .5s ease-in, opacity .5s ease-in, filter .15s ease-in .35s
+  //     transform: scaleX(0)
+  //     opacity: 0
+  //     -webkit-filter: blur(2px)
+
+  //   .projector
+  //     transition: all .5s ease-out .5s
+  //     opacity: 0
+  //     transform: translate(-500px, 365px)
+
+  //   .phone
+  //     transition: all .5s ease-in-out 1s
+  //     transform: translate(650px, -35px) scale(.8)
+
+  //   .projector-screen
+  //     transition: all .5s ease-in-out 1s
+  //     transform: translate(20px, -25px) scale(.8)
+
+  //   .try-it-form
+  //     transition: transform 1s ease-out 1.5s, opacity .25s ease-in 2.25s
+  //     opacity: 1
+  //     transform: translateY(20px)

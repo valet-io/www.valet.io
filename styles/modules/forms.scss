@@ -7,10 +7,18 @@
   padding: .5em;
   margin: 1em 0;
 
+  width: 100%;
+
   border-radius: 5px;
 
   outline: none;
   border: 2px solid silver;
 
   transition: border .25s;
+}
+
+.form-label {
+  display: block;
+  margin: .5em 0;
+  font-weight: 500;
 }

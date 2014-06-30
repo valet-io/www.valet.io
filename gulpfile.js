@@ -51,7 +51,7 @@ gulp.task('serve', ['build', 'server'], function () {
   gulp.watch('styles/**/*.scss', ['styles']);
   gulp.watch('images/**/*', ['images']);
   gulp.watch('js/*.js', ['js']);
-  gulp.watch(['layouts/*', 'pages/**/*', 'partials/*'], ['grunt-assemble']);
+  gulp.watch(['layouts/*', 'pages/**/*', 'partials/**/*'], ['grunt-assemble']);
 
   gulp.watch('build/**/*').on('change', function (file) {
     livereload.changed(file.path);

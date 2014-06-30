@@ -1,6 +1,37 @@
+'use strict';
+
 var $ = require('jquery');
 
-$('#try-it-btn').on('click', function (event) {
+var $overlay = $('.modal-overlay');
+var $modal = $('.modal');
+var $form = $('#demo-request-modal form');
+var $fields = {
+  name: $('#demo-request-name'),
+  organization: $('#demo-request-organization'),
+  email: $('#demo-request-email')
+};
+
+$('.start-demo-request').on('click', function () {
+  $overlay.show();
+  $modal.show();
+});
+
+$('.modal-close').on('click', function () {
+  $overlay.hide();
+  $modal.hide();
+});
+
+$form.on('submit', function (event) {
   event.preventDefault();
-  $('header.hero').addClass('try-it');
+  var data = {};
+  for (var field in $fields) {
+    data[field] = $fields[field].val();
+  }
+  $.post('http://site-api.valet.io', data)
+    .done(function () {
+      $form.append('Thanks! We received your request and will be in touch soon.');
+    })
+    .fail(function () {
+      $form.append('Oh no! We were not able to submit your request. You can try again or <a href="mailto:jordan@valet.io">email us directly</a>.');
+    });
 });

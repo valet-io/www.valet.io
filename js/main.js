@@ -11,7 +11,8 @@ var $fields = {
   email: $('#demo-request-email')
 };
 
-$('.start-demo-request').on('click', function () {
+$('.start-demo-request').on('click', function (event) {
+  event.preventDefault();
   $overlay.show();
   $modal.show();
 });

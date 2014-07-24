@@ -1,7 +1,9 @@
 #index {
 
   .hero {
-    @include background(linear-gradient(150deg, saturate(darken($valet-io-color, 20%), 20%), rgb(225, 65, 0) 50%, rgb(210, 111, 0)));
+    $start-color: saturate(darken($valet-io-color, 20%), 20%);
+    background-color: $start-color;
+    @include background-image(linear-gradient(150deg, $start-color, rgb(225, 65, 0) 50%, rgb(210, 111, 0)));
   }
 
   $phone-ratio: 0.48;

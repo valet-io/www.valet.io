@@ -1,6 +1,8 @@
 #features #main-content {
   .hero {
-    @include background(linear-gradient(-180deg, #3B0014 0%, #620A0F 17%, #E03B3B 100%));
+    $start-color: #3B0014;
+    background-color: $start-color;
+    @include background(linear-gradient(-180deg, $start-color 0%, #620A0F 17%, #E03B3B 100%));
     text-align: center;
 
     .headlines {
@@ -77,7 +79,9 @@
     color: white;
     text-shadow: rgba(black, .25) 0 1px 1px;
     border-radius: .2em;
-    @include background(linear-gradient(44deg, #29B229 0%, #2FB841 50%, #4BD334 100%), green);
+    $start-color: #29B229;
+    background-color: $start-color;
+    @include background(linear-gradient(44deg, $start-color 0%, #2FB841 50%, #4BD334 100%), green);
     box-shadow: rgba(black, .25) 0 1px 2px;
     padding: .4em;
     @media #{$desktop} {

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lte IE 9]>      <html class="no-js ie-ancient"> <![endif]-->
+<!--[if gt IE 10]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,9 +16,14 @@
         <link rel="stylesheet" href="/css/main.css">
     </head>
     <body id="{{page.basename}}">
-        <div id="main">
-            {{> body }}
-        </div>
+      <div class="ie-ancient-message">
+        <p>
+          This site is best viewed in a <a href="http://browsehappy.com/">newer browser</a>. The layout may not look quite right in older versions of Internet Explorer. <a href="mailto:jordancohen@valet.io">Let us know</a> if we can help!
+        </p>
+      </div>
+      <div id="main">
+          {{> body }}
+      </div>
     </body>
     <script type="text/javascript">
       (function(d) {

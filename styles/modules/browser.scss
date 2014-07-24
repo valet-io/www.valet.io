@@ -1,0 +1,30 @@
+.ie-ancient-message {
+  display: none;
+}
+
+.ie-ancient .ie-ancient-message {
+  display: block;
+  $color: #4990E2;
+  background-color: $color;
+  border-bottom: 5px solid darken($color, 5%);
+
+  p {
+    display: block;
+    margin: 0 auto;
+    max-width: $max-page-width;
+    padding: 20px;
+
+    font-size: 1.5em;
+    line-height: 1.5;
+    font-weight: 300;
+    text-align: center;
+
+    color: white;
+    text-shadow: 0 1px 0 rgba(black, .2);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}

@@ -24,7 +24,7 @@
 }
 
 $i: 0;
-@each $icon in (credit, mobile, projection, phone, bubble, mail, twitter, facebook) {
+@each $icon in (credit, mobile, projection, phone, bubble, mail, facebook, twitter) {
   .icon-#{$icon}:before {
     content: '\e60#{$i}';
   }

@@ -239,7 +239,6 @@
       text-align: center;
       @media #{$tablet} {
         @include flex(4);
-        background: rgba(#00095A, .1);
         padding: 3em 0;
       }
     }

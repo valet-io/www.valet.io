@@ -28,6 +28,7 @@ gulp.task('images', function () {
 gulp.task('bundle', function () {
   return browserify()
     .add('./src/index.js')
+    .transform('partialify')
     .bundle()
     .pipe(source('app.js'))
     .pipe(gulp.dest('build/scripts'));

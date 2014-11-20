@@ -1,5 +1,5 @@
 <div class="modal-overlay" v-show="modalVisible" v-cloak></div>
-<bd-modal class="modal" id="demo-request-modal" name="demoModal" v-cloak>
+<div v-component="modal" id="demo-request-modal" name="demoModal" v-cloak>
   <div class="modal-header">
     <h1 class="modal-title">Request a 1-1 Demo</h1>
     <span class="modal-close" v-on="click:hide">x</span>
@@ -24,4 +24,4 @@
       <button type="submit" class="button button-green button-large">Request</button>
     </form>
   </div>
-</bd-modal>
+</div v-component="modal">

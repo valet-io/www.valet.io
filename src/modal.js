@@ -18,7 +18,7 @@ module.exports = Vue.extend({
       this.$parent.$set(this.modal.name, void 0);
     }
   },
-  template: '<div v-show="visible"><content></content></div>',
+  template: require('./modal.html'),
   data: function () {
     return {
       visible: false

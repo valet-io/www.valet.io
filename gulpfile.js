@@ -1,13 +1,13 @@
 'use strict';
 
-var gulp       = require('gulp');
-var gutil      = require('gulp-util');
-var plugins    = require('gulp-load-plugins')();
-var connect    = require('connect');
-var browserify = require('browserify');
-var source     = require('vinyl-source-stream');
-var http       = require('http');
-var open       = require('open');
+var gulp        = require('gulp');
+var gutil       = require('gulp-util');
+var plugins     = require('gulp-load-plugins')();
+var superstatic = require('superstatic');
+var browserify  = require('browserify');
+var source      = require('vinyl-source-stream');
+var http        = require('http');
+var open        = require('open');
 
 plugins.grunt(gulp);
 
@@ -34,14 +34,12 @@ gulp.task('bundle', function () {
 });
 
 gulp.task('server', function (done) {
-  var server = http.createServer(connect()
+  var server = superstatic()
     .use(require('connect-livereload')())
-    .use(connect.static('build'))
-  )
-  .listen(8000, function () {
-    gutil.log('Running on http://localhost:' + server.address().port);
-    done();
-  });
+    .listen(function () {
+      gutil.log('Running on http://localhost:' + server.address().port);
+      done();
+    });
 });
 
 gulp.task('build', ['grunt-assemble', 'styles', 'images', 'bundle']);

@@ -25,11 +25,12 @@ gulp.task('images', function () {
     .pipe(gulp.dest('build/images'));
 });
 
-gulp.task('js', function () {
-  return browserify('./js/main.js')
+gulp.task('bundle', function () {
+  return browserify()
+    .add('./src/index.js')
     .bundle()
-    .pipe(source('main.js'))
-    .pipe(gulp.dest('build/js'));
+    .pipe(source('app.js'))
+    .pipe(gulp.dest('build/scripts'));
 });
 
 gulp.task('server', function (done) {
@@ -43,14 +44,14 @@ gulp.task('server', function (done) {
   });
 });
 
-gulp.task('build', ['grunt-assemble', 'styles', 'images', 'js']);
+gulp.task('build', ['grunt-assemble', 'styles', 'images', 'bundle']);
 
 gulp.task('serve', ['build', 'server'], function () {
   var livereload = plugins.livereload();
   plugins.livereload.listen();
   gulp.watch('styles/**/*.scss', ['styles']);
   gulp.watch('images/**/*', ['images']);
-  gulp.watch('js/*.js', ['js']);
+  gulp.watch('src/*.js', ['bundle']);
   gulp.watch(['layouts/*', 'pages/**/*', 'partials/**/*'], ['grunt-assemble']);
 
   gulp.watch('build/**/*').on('change', function (file) {

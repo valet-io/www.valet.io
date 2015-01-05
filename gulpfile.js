@@ -50,7 +50,7 @@ gulp.task('serve', ['build', 'server'], function () {
   plugins.livereload.listen();
   gulp.watch('styles/**/*.scss', ['styles']);
   gulp.watch('images/**/*', ['images']);
-  gulp.watch('src/*.js', ['bundle']);
+  gulp.watch('src/**/*', ['bundle']);
   gulp.watch(['layouts/*', 'pages/**/*', 'partials/**/*'], ['grunt-assemble']);
 
   gulp.watch('build/**/*').on('change', function (file) {

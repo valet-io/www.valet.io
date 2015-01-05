@@ -1,0 +1,24 @@
+<div v-component="modal" name="demoModal" title="Request a 1-1 Demo" v-cloak>
+  <p id="demo-cta">
+    We'd love to hear more about your upcoming fundraisers and explain how Valet.io can help!
+  </p>
+  <form v-on="submit: send" novalidate>
+    <div class="input-group">
+      <label for="demo-request-name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="demo-request-name" v-model="request.name" required />
+    </div>
+    <div class="input-group">
+      <label for="demo-request-organization" class="form-label">Organzation</label>
+      <input type="text" class="form-control" id="demo-request-organization" v-model="request.organization" required />
+    </div>
+    <div class="input-group">
+      <label for="demo-request-email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="demo-request-email" v-model="request.email" required />
+    </div>
+    <button type="submit" class="button button-green button-large">Request</button>
+    <div v-show="submission.attempted">
+      <span v-show="submission.succeeded">Thanks! We received your request and will be in touch soon.</span>
+      <span v-show="!submission.succeeded">Oh no! We were not able to submit your request. You can try again or <a href="mailto:jordan@valet.io">email us directly</a></span>
+    </div>
+  </form>
+</div>

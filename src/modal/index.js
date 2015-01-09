@@ -12,15 +12,15 @@ module.exports = Vue.extend({
   },
   methods: {
     show: function (event) {
-      event.preventDefault();
+      if (event) event.preventDefault();
       this.visible = true;
     },
     hide: function (event) {
-      event.preventDefault();
+      if (event) event.preventDefault();
       this.visible = false;
     },
     toggle: function (event) {
-      event.preventDefault();
+      if (event) event.preventDefault();
       this.visible = !this.visible;
     }
   },

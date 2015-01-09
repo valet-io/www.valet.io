@@ -11,13 +11,16 @@ module.exports = Vue.extend({
     };
   },
   methods: {
-    show: function () {
+    show: function (event) {
+      event.preventDefault();
       this.visible = true;
     },
-    hide: function () {
+    hide: function (event) {
+      event.preventDefault();
       this.visible = false;
     },
-    toggle: function () {
+    toggle: function (event) {
+      event.preventDefault();
       this.visible = !this.visible;
     }
   },

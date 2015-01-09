@@ -1,7 +1,6 @@
 language: node_js
 node_js: '0.10'
 script: npm run build
-after_deploy: sh ./scripts/deliver.sh
 deploy:
 - provider: divshot
   api_key:
@@ -13,7 +12,3 @@ deploy:
 notifications:
   slack:
     secure: N6FbQmqGrqq3qZucvLZRAZskS/10Yss1MfSPfhGAgDLP+4GvKSZL0EE60HZABFvjj8DjJggBSTBHN6uOrOHtbeuPbCIIfbkZtLD16nMNXxC7ll0G0dk62Yzhx9N39edzNFupPX9DOkQahXxKDLC4LlsfTkVmswgKMKBdvalnMZI=
-env:
-  global:
-  - TRACKER_PROJECT_ID=1109168
-  - secure: i0+Uih588vlMy6TTNX2Qit4XA4aoIDQXZ4t9uftAXXmejj1S8ae1exQe+swWH2ojEbHSI50MMkfida8ezSrhAVYAca8RTG8lw4MMlTZKEIe9NVnWsCAhtmNTQzo9rL1+kX4I1WC1lzNiJyLOQgMnc00SBK+3eBqFcYSTBjWKNAw=

@@ -1,0 +1,12 @@
+<div v-show="visible">
+  <div class="modal-overlay"></div>
+  <div class="modal">
+    <div class="modal-header">
+      <h1 class="modal-title">{{title}}</h1>
+      <span class="modal-close" v-on="click: hide">x</span>
+    </div>
+    <div class="modal-body">
+      <content></content>
+    </div>
+  </div>
+</div>

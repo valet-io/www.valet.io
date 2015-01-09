@@ -29,6 +29,10 @@ a {
   color: #008CDD;
 }
 
+[v-cloak] {
+  display: none
+}
+
 .arrow {
   &:after {
     content: '\25b6';

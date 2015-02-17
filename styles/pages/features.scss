@@ -28,14 +28,6 @@
       color: #DADADA;
     }
 
-    h3 {
-      @media #{$tablet} {
-        font-size: 1.25em;        
-      }
-      margin: .5em 0;
-      color: white;
-    }
-
     h4 {
       display: none;
       line-height: 1.2em;
@@ -48,49 +40,31 @@
     }
   }
 
-  .section-tiles {
+  .questions {
     @include display(flex);
-
-    @media #{$desktop} {
-      padding-bottom: 1em;
-    } 
-
+    font-size: 2em;
+    padding: .5em 0;
+    margin-bottom: .5em;
+    border-bottom: 1px solid rgba(white, .25);
+    ul {
+      @include flex(2);
+      text-align: left;
+      margin-right: 1em;
+    }
     li {
+      margin: 1em 0;
+    }
+    img {
       @include flex(1);
-      padding: 1em;
-      text-align: center;
-      @media #{$desktop} {
-        text-align: left;        
-      }
-    }
-
-    a {
-      display: block;
-      @media #{$desktop} {
-        @include display(flex);
-        @include align-items(center);
-      }
+      margin: 0 1em;
+      max-height: 8em;
     }
   }
 
-  .section-tile-icon {
-    display: inline-block;
-    font-size: 3em;
-    color: white;
-    text-shadow: rgba(black, .25) 0 1px 1px;
-    border-radius: .2em;
-    $start-color: #29B229;
-    background-color: $start-color;
-    @include background(linear-gradient(44deg, $start-color 0%, #2FB841 50%, #4BD334 100%), green);
-    box-shadow: rgba(black, .25) 0 1px 2px;
-    padding: .4em;
-    @media #{$desktop} {
-      margin-right: .5em;  
-    }
-  }
-
-  .tile-body {
-    @include flex(1 0);
+  .closing-tagline {
+    font-size: 2em;
+    text-align: left;
+    margin-bottom: .5em;
   }
 
   .section-shaded {

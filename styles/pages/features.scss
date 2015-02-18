@@ -41,7 +41,9 @@
   }
 
   .questions {
-    @include display(flex);
+    @media #{tablet} {
+      @include display(flex);  
+    }
     font-size: 2em;
     padding: .5em 0;
     margin-bottom: .5em;
@@ -56,6 +58,7 @@
     }
     img {
       @include flex(1);
+      order: 1;
       margin: 0 1em;
       max-height: 8em;
     }
@@ -140,24 +143,25 @@
   }
 
   .step-number {
-    position: absolute;
+    @media #{$desktop} {
+      display: inline;
+      position: absolute;
+    }
+    text-align: center;
     font-size: 3em;
-    line-height: 1.25em;
-    padding: .25em .75em;
-    color: white;
-    text-shadow: 0px 1px 2px rgba(black, .1);
-    @include linear-gradient(#5ba3ea,#2e86e4 85%,#2e86e4 90%,#1c7cdd);
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-  }
-
-  .view {
-    display: none;
-  }
-
-  @media #{$tablet} {
-    .view {
-      display: block;
+    span {
+      display: inline-block;
+      border-radius: 50%;
+      width: 2em;
+      height: 2em;
+      line-height: 2em;
+      color: white;
+      text-shadow: 0px 1px 2px rgba(black, .1);
+      @include linear-gradient(#5ba3ea,#2e86e4 85%,#2e86e4 90%,#1c7cdd);
+      @media #{$desktop} {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
     }
   }
 
@@ -175,6 +179,9 @@
   }
 
   #call-attention {
+    :first-child {
+      order: 1;
+    }
     .view-content {
       margin-right: 2em;
     }
@@ -182,7 +189,12 @@
 
   #pledge-and-donate {
     .view-content {
-      margin-left: 6em;
+      max-width: 80%;
+      margin: 0 auto;
+      @media #{$desktop} {
+        margin-left: 6em;
+        max-width: none;      
+      }
     }
   }
 
@@ -211,11 +223,11 @@
     }
 
     &:before {
-      margin-left: 4em;
+      margin-left: 10%;
     }
 
     &:after {
-      margin-right: 4em;
+      margin-right: 10%;
     }
   }
 
@@ -319,7 +331,7 @@
 }
 
 .content.two-column {
-  @media #{$tablet} {
+  @media #{$desktop} {
     @include display(flex);
   }  
 }

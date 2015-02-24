@@ -20,9 +20,10 @@
   }
 
   .projector-content {
-    background: url('/images/projector-contents.svg') no-repeat;
     width: 580px;
     height: 435px;
+    background: url('/images/projector-contents.svg') no-repeat;
+    background-size: 100% 100%;
     @include transform(translate(15px, 25px));
   }
 

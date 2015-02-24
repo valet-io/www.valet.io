@@ -41,7 +41,7 @@
   }
 
   .questions {
-    @media #{tablet} {
+    @media #{$tablet} {
       @include display(flex);  
     }
     font-size: 2em;

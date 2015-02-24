@@ -268,101 +268,32 @@
     }
   }
 
-  #momentum .content, #easy .content {
-    @media #{$tablet} {
-      @include display(flex);
-
-      .details {
-        @include flex(8);
-      }
-
-      .view {
-        @include flex(4);
-      }
-
-      .view {
-        padding-left: 5em;
-      }
-    }
+  #price button {
+    display: block;
+    font-size: 4em;
+    margin: .5em auto;
+    border: none;
   }
 
-  footer {
-    background: #F6F9FC;
-
-    .container {
-      @media #{$tablet} {
-        @include display(flex);
-        @include align-items(center);
-      }
-    }
-
-    .text {
-      text-align: center;
-      padding: 1em 0;
-      @media #{$tablet} {
-        @include flex(8);
-        text-align: left;
-      }
-    }
-
-    h3 {
-      font-size: 1.25em;
-      margin-bottom: .25em;
-      @media #{$tablet} {
-        font-size: 2em;
-      }
-    }
-
-    h4 {
-      color: #9B9B9B;
-      @media #{$tablet} {
-        font-size: 1.5em;
-      }
-      font-weight: 300;
-    }
-
-    .action {
-      padding: 1em 0;
-      text-align: center;
-      @media #{$tablet} {
-        @include flex(4);
-        padding: 3em 0;
-      }
-    }
-
-    .phone {
-      display: block;
-      font-size: 2em;
-    }
-
-    .or {
+  .price-breakdown {
+    @media #{$tablet} {
       @include display(flex);
-      text-transform: uppercase;
-      font-weight: 300;
-      margin: .5em 0;
-      color: #9B9B9B;
-      @include flex(1);
-      @include align-items(center);
-
-      &:before, &:after {
-        content: '';
-        @include flex(1);
-        height: 1px;
-        background: lighten(#9B9B9B, 20%);
-        margin: 0 1em;
-        @include align-items(center);
-      }
-
-      &:before {
-        margin-left: 5em;
-      }
-
-      &:after {
-        margin-right: 5em;
-      }
-
     }
-
+    @include justify-content(center);
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: .5em;
+    h3, .price-separator {
+      margin: 0 .1em;
+      color: #444;
+      font-size: 5em;
+    }
+    p {
+      font-size: .75em;
+      font-weight: 300;
+      color: #bbb;
+      text-transform: uppercase;
+    }
   }
 
 }

@@ -42,3 +42,25 @@ a {
     bottom: .1em;
   }
 }
+
+#main {
+  position: relative;
+}
+
+#oob {
+  position: absolute;
+  background: rgba(white, .9);
+  box-shadow: 0 2px 5px rgba(black, .2);
+  font-size: 1.5em;
+  line-height: 1.25em;
+  z-index: 100;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 2em 2em;
+  text-align: center;
+
+  p {
+    margin-bottom: 1em;
+  }
+}
